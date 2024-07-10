@@ -1,12 +1,20 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrl: './footer.component.scss',
 })
-export class FooterComponent {
-
+export class FooterComponent implements OnInit {
+  constructor(private router: Router) {}
+  ngOnInit(): void {
+    // throw new Error('Method not implemented.');
+  }
+  gotoImpressum() {
+    this.router.navigate(['/impressum']);
+  }
 }
