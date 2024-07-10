@@ -4,6 +4,7 @@ $neon-purple: #9747ff;
 $neon-blue: #1cdae6;
 $neon-green: #70e61c;
 $neon-red: #e61c40;
+$background-color: #141d2f;
 
 @font-face {
   font-family: Poppins;
@@ -12,7 +13,7 @@ $neon-red: #e61c40;
 
 body {
   margin: 0;
-  background-color: #000;
+  background-color: $background-color;
   font-family: Poppins;
   color: white;
 }

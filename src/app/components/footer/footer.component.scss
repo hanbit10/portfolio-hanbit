@@ -3,11 +3,14 @@
 .container {
   position: relative;
   @include setFlex($direction: row, $justify: space-between, $align: center);
-  padding: 20px 0;
-  background-color: rgba(0, 255, 255, 0.511);
+  height: 30vh;
+  padding-top: 20px;
+  padding-right: 100px;
+  padding-left: 100px;
+  border-top: 4px solid $neon-green;
 }
 
 .text {
-  font-size: 3rem;
-  font-weight: 400x;
+  font-size: 1.5rem;
+  font-weight: 400;
 }
