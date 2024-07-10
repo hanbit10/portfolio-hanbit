@@ -1,1 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: Poppins;
+  src: url(assets/fonts/poppins-v21-latin-regular.woff2);
+}
+
+body {
+  margin: 0;
+  background-color: #000;
+}
+
+@mixin setFont($family: Poppins, $weight: normal, $size: 24px) {
+  font-family: $family;
+  font-weight: $weight;
+  font-size: $size;
+}
+
+h1 {
+  @include setFont(Poppins, bold, 90px);
+  color: #ffffff;
+}
+
+h2 {
+  @include setFont(Poppins, normal, 64px);
+  color: #ffffff;
+}
+
+h3 {
+  @include setFont(Poppins, normal, 32px);
+  color: #9747ff;
+}
