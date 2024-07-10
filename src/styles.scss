@@ -16,6 +16,7 @@ body {
   background-color: $background-color;
   font-family: Poppins;
   color: white;
+  width: 100vw;
 }
 
 @mixin setFont($weight: normal, $size: 24px) {
