@@ -1,0 +1,61 @@
+@import "./../../../styles.scss";
+
+.container {
+  min-height: 70vh;
+  padding-top: 15vh;
+  position: relative;
+  @include setFlex(column, center, center);
+  background-image: url("./../../../assets/img/shapes/shape3.svg");
+  background-repeat: no-repeat;
+  background-size: 30%;
+  background-position-y: 55%;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(row, space-between, flex-start);
+}
+
+.content-left {
+  width: 100%;
+  max-width: 720px;
+  @include setFlex(column, center, center);
+  padding-left: 40px;
+}
+
+.logo-container {
+  width: 100%;
+  @include setFlex(row, space-around, center);
+  img {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.content-right {
+  width: 100%;
+  max-width: 570px;
+  @include setFlex(column, flex-start, flex-start);
+  padding-top: 40px;
+  padding-right: 40px;
+  z-index: 2;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+.btn {
+  @include setButton(160px, 60px, $neon-green);
+  @include setFlex(row, center, center);
+  margin-top: 20px;
+  cursor: pointer;
+  &:hover {
+    transform: scale(1.1);
+    background-color: $neon-purple;
+    transition: 0.3s ease-in-out;
+  }
+  transition: 0.3s ease-in-out;
+}

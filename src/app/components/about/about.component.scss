@@ -3,7 +3,7 @@
 .container {
   @include setFlex(column, center, center);
   position: relative;
-  min-height: 100vh;
+  min-height: 50vh;
   z-index: 4;
   background-image: url("./../../../assets/img/shapes/shape1.svg");
   background-repeat: no-repeat;
