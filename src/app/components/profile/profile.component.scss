@@ -1,15 +1,36 @@
 @import "./../../../styles.scss";
 
 .container {
-  padding-top: 15vh;
+  height: 100vh;
+  padding-top: 5vh;
   position: relative;
+  @include setFlex(row, center, center);
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
   @include setFlex(row, space-between, center);
-  background-image: url("./../../../assets/img/shapes/shape-vector1.svg");
+  background-image: url("./../../../assets/img/shapes/shape-profile.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.content-left {
+  @include setFlex(column, center, center);
+  padding-left: 40px;
+  img {
+    padding-left: 40px;
+    width: 450px;
+    height: 700px;
+  }
 }
 
 .content-right {
   @include setFlex(column, space-between, center);
   padding-right: 40px;
+  z-index: 2;
 }
 
 .i-am {
@@ -51,4 +72,13 @@
     background-color: $neon-purple;
   }
   transition: 0.3s ease-in-out;
+}
+
+.vector {
+  position: absolute;
+  width: 100%;
+  // max-width: 1440px;
+  top: 20%;
+  bottom: 0;
+  left: 0;
 }
