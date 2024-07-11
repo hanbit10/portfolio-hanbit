@@ -21,6 +21,11 @@ $background-color: #141d2f;
   src: url("./assets/fonts/poppins-v21-latin-900.woff2");
 }
 
+html {
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
 body {
   margin: 0;
   background-color: $background-color;
