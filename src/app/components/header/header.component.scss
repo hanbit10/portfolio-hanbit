@@ -6,7 +6,7 @@
   left: 0;
   @include setFlex($direction: row, $justify: space-between, $align: center);
   width: 100%;
-  height: fit-content;
+  height: 15vh;
   background-color: $background-color;
   z-index: 2;
 }
@@ -16,8 +16,6 @@
   height: fit-content;
   padding-right: 100px;
   padding-left: 100px;
-  padding-top: 38px;
-  padding-bottom: 38px;
   @include setFlex($direction: row, $justify: space-between, $align: center);
 }
 
