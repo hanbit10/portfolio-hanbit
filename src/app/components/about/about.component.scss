@@ -1,0 +1,17 @@
+@import "./../../../styles.scss";
+.container {
+  position: relative;
+  z-index: 4;
+  background-image: url("./../../../assets/img/shapes/shape1.svg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position-x: 130%;
+  background-position-y: 25%;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(column, space-between, center);
+}
