@@ -1,0 +1,57 @@
+@import "./../../../styles.scss";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  @include setFlex($direction: row, $justify: space-between, $align: center);
+  width: 100%;
+  height: 15vh;
+  background-color: $background-color;
+  z-index: 2;
+}
+
+.content {
+  width: 100%;
+  height: fit-content;
+  padding-right: 100px;
+  padding-left: 100px;
+  @include setFlex($direction: row, $justify: space-between, $align: center);
+}
+
+.container-left {
+  @include setFlex(
+    $direction: column,
+    $justify: flex-start,
+    $align: flex-start
+  );
+}
+
+.container-right {
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 14px;
+    &:hover {
+      color: $neon-green;
+      transition: 0.3s ease-in-out;
+    }
+  }
+}
+
+.logo-container {
+  @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+}
+
+.logo {
+  @include setFont(bold, 2rem);
+  color: white;
+}
+
+.green {
+  color: $neon-green;
+}
+
+.purple {
+  color: $neon-purple;
+}
