@@ -55,6 +55,8 @@ body {
 
 h1 {
   @include setFont(bold, 90px);
+  font-family: Poppins700;
+  margin: 0;
   color: #ffffff;
 }
 
