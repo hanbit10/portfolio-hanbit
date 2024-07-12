@@ -1,0 +1,20 @@
+@import "./../../../styles.scss";
+
+.container {
+  display: grid;
+  grid-template-rows: 100%;
+  grid-template-columns: 1fr 1440px 1fr;
+}
+
+.item {
+  background-color: $neon-green;
+}
+
+.item-2 {
+  width: 1440px;
+  background-color: $neon-purple;
+  // grid-column-start: 1;
+  // grid-column-end: 3;
+  // grid-row-start: 1;
+  // grid-row-end: 3;
+}
