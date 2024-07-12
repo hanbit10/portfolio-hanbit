@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { AboutComponent } from '../../components/about/about.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
+import { SandboxComponent } from '../../components/sandbox/sandbox.component';
 
 @Component({
   selector: 'app-main-page',
@@ -15,6 +16,7 @@ import { SkillsComponent } from '../../components/skills/skills.component';
     ProfileComponent,
     AboutComponent,
     SkillsComponent,
+    SandboxComponent,
     CommonModule,
   ],
   templateUrl: './main-page.component.html',
