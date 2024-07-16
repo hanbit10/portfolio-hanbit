@@ -78,33 +78,69 @@
   @include setFlex(column, center, center);
 }
 
-.right-position {
-}
-
 .portfolio {
   width: 100%;
   max-width: 1440px;
-  height: 30vh;
-  @include setFlex(row, space-between, center);
+  height: fit-content;
+  @include setFlex(row, center, center);
   // background-color: aqua;
 }
 
 .portfolio-img {
   // background-color: beige;
-  width: 50%;
-  height: 30vh;
-  img {
-    width: 500px;
-    aspect-ratio: 4/3;
-  }
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1/1;
 }
 
 .portfolio-info {
   // background-color: rgb(209, 68, 49);
   width: 50%;
-  height: 30vh;
+  height: fit-content;
+  p {
+    font-size: 16px;
+  }
 }
 
 .right-position {
   flex-direction: row-reverse;
+}
+
+.img-container {
+  width: 600px;
+  height: fit-content;
+  @include setFlex(row, center, center);
+}
+
+.btn-container {
+  width: 100%;
+  @include setFlex(row, flex-start, center);
+  margin-top: 20px;
+  .btn {
+    @include setButton(160px, 60px, $neon-purple);
+    @include setFlex(row, center, center);
+    margin-right: 50px;
+    cursor: pointer;
+    &:hover {
+      transform: scale(1.1);
+      background-color: $neon-green;
+      transition: 0.3s ease-in-out;
+    }
+    transition: 0.3s ease-in-out;
+  }
+
+  .transparent {
+    background-color: transparent;
+    border: 1px solid $neon-green;
+  }
+}
+
+.text-end {
+  text-align: end;
+}
+
+.f-end {
+  justify-content: flex-end;
+  margin-right: 0;
+  margin-left: 50px;
 }

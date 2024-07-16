@@ -71,6 +71,15 @@ h2 {
 }
 
 h3 {
-  @include setFont(normal, 32px);
-  color: #9747ff;
+  @include setFont(bold, 32px);
+  color: $neon-purple;
+  font-family: Poppins700;
+  margin: 0;
+}
+
+h4 {
+  @include setFont(bold, 24px);
+  color: $neon-green;
+  font-family: Poppins;
+  margin: 0;
 }
