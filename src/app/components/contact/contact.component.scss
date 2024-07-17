@@ -60,7 +60,7 @@
 }
 
 .content-right {
-  width: 40%;
+  width: 50%;
 
   form {
     @include setFlex(column, center, center);
@@ -86,11 +86,10 @@
     all: unset;
     border-radius: 10px;
     border: 1px solid $neon-purple;
-    width: 100%;
+    width: 90%;
     height: 20px;
     padding: 15px 25px 15px 25px;
     margin-bottom: 20px;
-
     background-repeat: no-repeat;
     background-size: 25px 25px;
     background-position: 97% 50%;
@@ -115,8 +114,10 @@
 
   .checkbox + label.button1 {
     width: 100%;
-    max-width: 136px;
-    height: 56px;
+    max-width: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    aspect-ratio: 1/1;
     display: inline-block;
     background-image: url("./../../../assets/img/icons/checkbox.svg");
     background-size: contain;
@@ -151,7 +152,7 @@
 
   textarea {
     all: unset;
-    width: 100%;
+    width: 90%;
     height: 200px;
     border-radius: 10px;
     padding: 15px 25px 15px 25px;
@@ -175,3 +176,24 @@
     }
   }
 }
+
+.checkbox-container {
+  @include setFlex(row, flex-start, center);
+  width: 100%;
+  padding-top: 20px;
+  p {
+    font-size: 14px;
+  }
+  a {
+    color: $neon-purple;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// input[type="checkbox"] .checkbox {
+
+// }
