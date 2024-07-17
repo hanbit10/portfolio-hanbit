@@ -1,1 +1,48 @@
-<p>contact works!</p>
+<div class="container">
+  <div class="line-container">
+    <div class="line"></div>
+  </div>
+  <div class="title-container">
+    <h1>Contact</h1>
+  </div>
+  <div class="content">
+    <div class="content-left">
+      <h3>Got a problem to solve?</h3>
+      <p>
+        Contact me through this form, I am interested in hearing from you,
+        knowing your ideas and contributing to your projects with my work.
+      </p>
+      <p>Need a Frontend developer? Contact me!</p>
+    </div>
+    <div class="content-right">
+      <form action="">
+        <input
+          id="text"
+          type="text"
+          class="text"
+          placeholder="Your name"
+          minlength="4"
+          required
+        />
+        <input
+          id="email"
+          type="email"
+          class="email"
+          placeholder="Your email"
+          required
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+        />
+        <textarea
+          id="text-area"
+          type="text"
+          placeholder="Your message"
+          required
+          minlength="10"
+        ></textarea>
+        <input type="checkbox" id="checkbox" class="checkbox" required />
+        <label for="checkbox" class="button1"></label>
+        <button id="button" type="submit" class="btn">Send message</button>
+      </form>
+    </div>
+  </div>
+</div>

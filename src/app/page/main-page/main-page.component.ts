@@ -7,6 +7,7 @@ import { AboutComponent } from '../../components/about/about.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
 import { SandboxComponent } from '../../components/sandbox/sandbox.component';
 import { PortfoliosComponent } from '../../components/portfolios/portfolios.component';
+import { ContactComponent } from '../../components/contact/contact.component';
 
 @Component({
   selector: 'app-main-page',
@@ -18,6 +19,7 @@ import { PortfoliosComponent } from '../../components/portfolios/portfolios.comp
     AboutComponent,
     SkillsComponent,
     SandboxComponent,
+    ContactComponent,
     CommonModule,
     PortfoliosComponent,
   ],

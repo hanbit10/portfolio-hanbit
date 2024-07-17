@@ -1,0 +1,177 @@
+@import "./../../../styles.scss";
+
+.container {
+  min-height: 50vh;
+  padding-top: 15vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: 200px 600px;
+  grid-template-columns: 1fr 1440px 1fr;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(row, space-between, flex-start);
+  background-image: url("./../../../assets/img/shapes/shape-profile.svg");
+  background-repeat: no-repeat;
+  background-size: 50%;
+  background-position-y: 55%;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.title-container {
+  width: 1390px;
+  height: 100px;
+  @include setFlex(row, flex-start, center);
+  padding-left: 50px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.line-container {
+  // background-color: aliceblue;
+  width: 100%;
+  height: 100px;
+  @include setFlex(row, flex-end, center);
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: $neon-purple;
+}
+
+.content-left {
+  width: 40%;
+  h3 {
+    color: white;
+  }
+}
+
+.content-right {
+  width: 40%;
+
+  form {
+    @include setFlex(column, center, center);
+    width: 100%;
+
+    button {
+      all: unset;
+      @include setButton(180px, 40px, $neon-green);
+      @include setFlex(row, center, center);
+      margin-top: 20px;
+      padding: 10px 24px 10px 24px;
+      &:hover {
+        transform: scale(1.1);
+        background-color: $neon-purple;
+        transition: 0.3s ease-in-out;
+      }
+      transition: 0.3s ease-in-out;
+    }
+  }
+
+  .text,
+  .email {
+    all: unset;
+    border-radius: 10px;
+    border: 1px solid $neon-purple;
+    width: 100%;
+    height: 20px;
+    padding: 15px 25px 15px 25px;
+    margin-bottom: 20px;
+
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 97% 50%;
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    &::-ms-input-placeholder {
+      color: white;
+    }
+
+    &:focus {
+      border: 1px solid $neon-green;
+    }
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .checkbox + label.button1 {
+    width: 100%;
+    max-width: 136px;
+    height: 56px;
+    display: inline-block;
+    background-image: url("./../../../assets/img/icons/checkbox.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .checkbox + label.button1:hover {
+    background-image: url("./../../../assets/img/icons/checkbox-hover.svg");
+  }
+
+  .checkbox:checked + label.button1 {
+    background-image: url("./../../../assets/img/icons/checkbox-checked.svg");
+  }
+
+  .checkbox:checked + label.button1:hover {
+    background-image: url("./../../../assets/img/icons/checkbox-checked-hover.svg");
+  }
+
+  .border-red {
+    border: 1px solid $neon-red;
+  }
+
+  .border-green {
+    border: 1px solid $neon-green;
+  }
+
+  textarea {
+    all: unset;
+    width: 100%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 15px 25px 15px 25px;
+    border: 1px solid $neon-purple;
+
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: 97% 5%;
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    &::-ms-input-placeholder {
+      color: white;
+    }
+
+    &:focus {
+      border: 1px solid $neon-green;
+    }
+  }
+}
