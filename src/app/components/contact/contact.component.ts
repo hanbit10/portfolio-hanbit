@@ -12,70 +12,87 @@ export class ContactComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    let inputText = <HTMLInputElement>document.getElementById('text');
-    let inputEmail = <HTMLInputElement>document.getElementById('email');
-    let textArea = <HTMLInputElement>document.getElementById('text-area');
-    let emailPattern =
-      /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
-    console.log(inputText);
-    inputText?.addEventListener('invalid', (e) => {
-      if (inputText) {
-        inputText.classList.remove('border-green');
-        inputText.classList.add('border-red');
-        inputText.style.backgroundImage =
-          'url("./../../../assets/img/icons/error.svg")';
-      }
+    // let inputText = <HTMLInputElement>document.getElementById('text');
+    // let inputEmail = <HTMLInputElement>document.getElementById('email');
+    // let textArea = <HTMLInputElement>document.getElementById('text-area');
+    // let button = <HTMLButtonElement>document.getElementById('button');
+    // let checkbox = <HTMLInputElement>document.getElementById('checkbox');
+
+    const form = <HTMLInputElement>document.getElementById('form');
+    const username = <HTMLInputElement>document.getElementById('username');
+    const email = <HTMLInputElement>document.getElementById('email');
+    const password = <HTMLInputElement>document.getElementById('password');
+    const password2 = <HTMLInputElement>document.getElementById('password2');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      validateInputs();
     });
 
-    inputText?.addEventListener('change', (e) => {
-      if (inputText) {
-        if (inputText.value.length >= 4) {
-          inputText.classList.add('border-green');
-          inputText.classList.remove('border-red');
-          inputText.style.backgroundImage =
-            'url("./../../../assets/img/icons/correct.svg")';
-        }
+    const setError = (element: any, message: any) => {
+      const inputControl = element.parentElement;
+      console.log(element);
+      console.log(inputControl);
+      const errorDisplay = inputControl.querySelector('.error');
+      if (errorDisplay) {
+        errorDisplay.innerText = message;
       }
-    });
+      inputControl.classList.add('error');
+      inputControl.classList.remove('success');
+    };
 
-    inputEmail?.addEventListener('invalid', (e) => {
-      if (inputEmail) {
-        inputEmail.classList.remove('border-green');
-        inputEmail.classList.add('border-red');
-        inputEmail.style.backgroundImage =
-          'url("./../../../assets/img/icons/error.svg")';
+    const setSuccess = (element: any) => {
+      const inputControl = element.parentElement;
+      const errorDisplay = inputControl.querySelector('.error');
+      if (errorDisplay) {
+        errorDisplay.innerText = '';
       }
-    });
+      inputControl.classList.add('success');
+      inputControl.classList.remove('error');
+    };
 
-    inputEmail?.addEventListener('change', (e) => {
-      if (inputEmail) {
-        if (emailPattern.test(inputEmail.value)) {
-          inputEmail.classList.remove('border-red');
-          inputEmail.classList.add('border-green');
-          inputEmail.style.backgroundImage =
-            'url("./../../../assets/img/icons/correct.svg")';
-        }
-      }
-    });
+    const isValidEmail = (email: any) => {
+      const re =
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(String(email).toLowerCase());
+    };
 
-    textArea?.addEventListener('invalid', (e) => {
-      if (textArea) {
-        textArea.classList.remove('border-green');
-        textArea.classList.add('border-red');
-        textArea.style.backgroundImage =
-          'url("./../../../assets/img/icons/error.svg")';
-      }
-    });
+    const validateInputs = () => {
+      const usernameValue = username.value.trim();
+      const emailValue = email.value.trim();
+      const passwordValue = password.value.trim();
+      const password2Value = password2.value.trim();
 
-    textArea?.addEventListener('change', (e) => {
-      if (textArea) {
-        if (textArea.value.length >= 10) {
-          textArea.classList.add('border-green');
-          textArea.classList.remove('border-red');
-          textArea.style.backgroundImage =
-            'url("./../../../assets/img/icons/correct.svg")';
-        }
+      if (usernameValue == '') {
+        setError(username, 'Username is required');
+      } else {
+        setSuccess(username);
       }
-    });
+
+      if (emailValue == '') {
+        setError(email, 'Email is required');
+      } else if (!isValidEmail(emailValue)) {
+        setError(email, 'Provide a valid email address');
+      } else {
+        setSuccess(email);
+      }
+
+      if (passwordValue == '') {
+        setError(password, 'Password is required');
+      } else if (passwordValue.length < 8) {
+        setError(password, 'Password must be at least 8 character.');
+      } else {
+        setSuccess(password);
+      }
+
+      if (password2Value == '') {
+        setError(password2, 'Please confirm your password');
+      } else if (password2Value !== passwordValue) {
+        setError(password2, "Passwords doesn't match");
+      } else {
+        setSuccess(password2);
+      }
+    };
   }
 }

@@ -68,7 +68,7 @@
 
     button {
       all: unset;
-      @include setButton(180px, 40px, $neon-green);
+      @include setButton(190px, 40px, $neon-green);
       @include setFlex(row, center, center);
       margin-top: 20px;
       padding: 10px 24px 10px 24px;
@@ -79,6 +79,20 @@
       }
       transition: 0.3s ease-in-out;
     }
+
+    .inactive {
+      @include setButton(190px, 40px, #b6b6b6);
+      cursor: default;
+      &:hover {
+        transform: scale(1);
+        background-color: #b6b6b6;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .message {
+    color: $neon-red;
   }
 
   .text,
@@ -194,6 +208,41 @@
   }
 }
 
-// input[type="checkbox"] .checkbox {
+.input-control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
-// }
+.input-control input {
+  all: unset;
+  border: 2px solid $neon-purple;
+  border-radius: 10px;
+  display: block;
+  font-size: 16px;
+  padding: 15px;
+  width: 80%;
+}
+
+.input-control input:focus {
+  outline: 0;
+  border: 2px solid $neon-green;
+}
+
+.input-control.success input {
+  border-color: $neon-green;
+}
+
+.input-control.error input {
+  border-color: $neon-red;
+}
+
+.input-control .error {
+  color: $neon-red;
+  font-size: 9px;
+  height: 13px;
+}
+
+.d-none {
+  display: none;
+}
