@@ -21,19 +21,17 @@ export class ContactComponent implements OnInit {
     const form = <HTMLInputElement>document.getElementById('form');
     const username = <HTMLInputElement>document.getElementById('username');
     const email = <HTMLInputElement>document.getElementById('email');
+    const textarea = <HTMLInputElement>document.getElementById('textarea');
     const password = <HTMLInputElement>document.getElementById('password');
     const password2 = <HTMLInputElement>document.getElementById('password2');
 
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-
       validateInputs();
     });
 
     const setError = (element: any, message: any) => {
       const inputControl = element.parentElement;
-      console.log(element);
-      console.log(inputControl);
       const errorDisplay = inputControl.querySelector('.error');
       if (errorDisplay) {
         errorDisplay.innerText = message;
@@ -63,11 +61,18 @@ export class ContactComponent implements OnInit {
       const emailValue = email.value.trim();
       const passwordValue = password.value.trim();
       const password2Value = password2.value.trim();
+      const textareaValue = textarea.value.trim();
 
       if (usernameValue == '') {
         setError(username, 'Username is required');
       } else {
         setSuccess(username);
+      }
+
+      if (textareaValue == '') {
+        setError(textarea, 'Message is required');
+      } else {
+        setSuccess(textarea);
       }
 
       if (emailValue == '') {

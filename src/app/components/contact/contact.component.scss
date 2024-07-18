@@ -164,31 +164,31 @@
     border: 1px solid $neon-green;
   }
 
-  textarea {
-    all: unset;
-    width: 90%;
-    height: 200px;
-    border-radius: 10px;
-    padding: 15px 25px 15px 25px;
-    border: 1px solid $neon-purple;
+  // textarea {
+  //   all: unset;
+  //   width: 90%;
+  //   height: 200px;
+  //   border-radius: 10px;
+  //   padding: 15px 25px 15px 25px;
+  //   border: 1px solid $neon-purple;
 
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
-    background-position: 97% 5%;
+  //   background-repeat: no-repeat;
+  //   background-size: 25px 25px;
+  //   background-position: 97% 5%;
 
-    &::placeholder {
-      color: white;
-      opacity: 1;
-    }
+  //   &::placeholder {
+  //     color: white;
+  //     opacity: 1;
+  //   }
 
-    &::-ms-input-placeholder {
-      color: white;
-    }
+  //   &::-ms-input-placeholder {
+  //     color: white;
+  //   }
 
-    &:focus {
-      border: 1px solid $neon-green;
-    }
-  }
+  //   &:focus {
+  //     border: 1px solid $neon-green;
+  //   }
+  // }
 }
 
 .checkbox-container {
@@ -212,21 +212,33 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-}
+  input {
+    all: unset;
+    border: 2px solid $neon-purple;
+    border-radius: 10px;
+    display: block;
+    font-size: 16px;
+    padding: 15px;
+    width: 90%;
 
-.input-control input {
-  all: unset;
-  border: 2px solid $neon-purple;
-  border-radius: 10px;
-  display: block;
-  font-size: 16px;
-  padding: 15px;
-  width: 80%;
-}
+    &:focus {
+      outline: 0;
+      border: 2px solid $neon-green;
+    }
+  }
 
-.input-control input:focus {
-  outline: 0;
-  border: 2px solid $neon-green;
+  textarea {
+    all: unset;
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid $neon-purple;
+
+    &:focus {
+      border: 1px solid $neon-green;
+    }
+  }
 }
 
 .input-control.success input {
@@ -234,6 +246,14 @@
 }
 
 .input-control.error input {
+  border-color: $neon-red;
+}
+
+.input-control.success textarea {
+  border-color: $neon-green;
+}
+
+.input-control.error textarea {
   border-color: $neon-red;
 }
 
