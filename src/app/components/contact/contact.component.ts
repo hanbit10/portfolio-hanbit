@@ -10,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
   constructor() {}
-
+  checker = 0;
   ngOnInit(): void {
     // let inputText = <HTMLInputElement>document.getElementById('text');
     // let inputEmail = <HTMLInputElement>document.getElementById('email');
@@ -18,16 +18,26 @@ export class ContactComponent implements OnInit {
     // let button = <HTMLButtonElement>document.getElementById('button');
     // let checkbox = <HTMLInputElement>document.getElementById('checkbox');
 
-    const form = <HTMLInputElement>document.getElementById('form');
+    const form = <HTMLFormElement>document.getElementById('form');
     const username = <HTMLInputElement>document.getElementById('username');
     const email = <HTMLInputElement>document.getElementById('email');
-    const textarea = <HTMLInputElement>document.getElementById('textarea');
-    const password = <HTMLInputElement>document.getElementById('password');
-    const password2 = <HTMLInputElement>document.getElementById('password2');
+    const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
+    const checkbox = <HTMLInputElement>document.getElementById('checkbox');
+    const button = document.getElementById('button');
 
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       validateInputs();
+      if (this.checker < 4) {
+        e.preventDefault();
+      }
+    });
+
+    checkbox.addEventListener('click', () => {
+      if (checkbox.checked) {
+        button?.classList.remove('inactive');
+      } else {
+        button?.classList.add('inactive');
+      }
     });
 
     const setError = (element: any, message: any) => {
@@ -59,44 +69,42 @@ export class ContactComponent implements OnInit {
     const validateInputs = () => {
       const usernameValue = username.value.trim();
       const emailValue = email.value.trim();
-      const passwordValue = password.value.trim();
-      const password2Value = password2.value.trim();
       const textareaValue = textarea.value.trim();
+      const checkboxValue = checkbox.checked;
 
       if (usernameValue == '') {
         setError(username, 'Username is required');
+        this.checker = 0;
       } else {
         setSuccess(username);
+        this.checker += 1;
       }
 
       if (textareaValue == '') {
         setError(textarea, 'Message is required');
+        this.checker = 0;
       } else {
         setSuccess(textarea);
+        this.checker += 1;
       }
 
       if (emailValue == '') {
         setError(email, 'Email is required');
+        this.checker = 0;
       } else if (!isValidEmail(emailValue)) {
         setError(email, 'Provide a valid email address');
+        this.checker = 0;
       } else {
         setSuccess(email);
+        this.checker += 1;
       }
 
-      if (passwordValue == '') {
-        setError(password, 'Password is required');
-      } else if (passwordValue.length < 8) {
-        setError(password, 'Password must be at least 8 character.');
+      if (checkboxValue) {
+        setSuccess(checkbox);
+        this.checker += 1;
       } else {
-        setSuccess(password);
-      }
-
-      if (password2Value == '') {
-        setError(password2, 'Please confirm your password');
-      } else if (password2Value !== passwordValue) {
-        setError(password2, "Passwords doesn't match");
-      } else {
-        setSuccess(password2);
+        setError(checkbox, 'Please accept the privacy policy');
+        this.checker = 0;
       }
     };
   }

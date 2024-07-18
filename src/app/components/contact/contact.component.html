@@ -81,17 +81,23 @@
           ></textarea>
           <div class="error"></div>
         </div>
-        <div class="input-control">
-          <label for="password">Password</label>
-          <input id="password" name="password" type="password" />
+        <div class="input-control checkbox-container">
+          <input
+            type="checkbox"
+            name="checkbox"
+            id="checkbox"
+            class="checkbox"
+          />
+          <label for="checkbox" class="button1"></label>
+          <p>
+            I've read the <a href="">privacy policy</a> and agree to the
+            processing of my data as outlined.
+          </p>
           <div class="error"></div>
         </div>
-        <div class="input-control">
-          <label for="password2">Password again</label>
-          <input id="password2" name="password2" type="password" />
-          <div class="error"></div>
-        </div>
-        <button type="submit">Sign Up</button>
+        <button id="button" type="submit" class="btn inactive">
+          Send message
+        </button>
       </form>
     </div>
   </div>
