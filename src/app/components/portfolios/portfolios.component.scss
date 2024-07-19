@@ -177,14 +177,13 @@
 
   .portfolio-info {
     @include setFlex(column, center, center);
-
+    width: 90%;
     p {
       text-align: center;
     }
 
     .btn-container {
       justify-content: center;
-
       .btn {
         margin-left: 10px;
         margin-right: 10px;
