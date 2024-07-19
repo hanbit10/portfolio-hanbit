@@ -83,18 +83,15 @@
   max-width: 1440px;
   height: fit-content;
   @include setFlex(row, center, center);
-  // background-color: aqua;
 }
 
 .portfolio-img {
-  // background-color: beige;
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1/1;
 }
 
 .portfolio-info {
-  // background-color: rgb(209, 68, 49);
   width: 50%;
   height: fit-content;
   p {
