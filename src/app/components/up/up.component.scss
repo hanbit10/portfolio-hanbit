@@ -1,0 +1,22 @@
+@import url("./../../../styles.scss");
+
+.up {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  cursor: pointer;
+  z-index: 11;
+  background-image: url(./../../../assets/img/buttons/up.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  width: 40px;
+  height: 40px;
+  &:hover {
+    background-image: url(./../../../assets/img/buttons/up-hover.svg);
+  }
+}
+
+.d-none {
+  display: none;
+}
