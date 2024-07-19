@@ -36,6 +36,10 @@
   img {
     padding-top: 20px;
     padding-bottom: 20px;
+    transition: top ease 0.5s;
+    &:hover {
+      top: -10px;
+    }
   }
 }
 
@@ -55,6 +59,7 @@
   @include setButton(160px, 60px, $neon-green);
   @include setFlex(row, center, center);
   margin-top: 20px;
+
   cursor: pointer;
   &:hover {
     transform: scale(1.1);
@@ -62,6 +67,11 @@
     transition: 0.3s ease-in-out;
   }
   transition: 0.3s ease-in-out;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .line-container {

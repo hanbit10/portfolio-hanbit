@@ -1,0 +1,230 @@
+@import "./../../../styles.scss";
+
+.container {
+  min-height: 80vh;
+  padding-top: 15vh;
+  position: relative;
+  display: grid;
+  grid-template-rows: 200px 600px;
+  grid-template-columns: 1fr 1440px 1fr;
+  background-image: url("./../../../assets/img/shapes/shape8.svg");
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position-y: 300px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(row, space-between, flex-start);
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.title-container {
+  width: 1390px;
+  height: 100px;
+  @include setFlex(row, flex-start, center);
+  padding-left: 50px;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.line-container {
+  width: 100%;
+  height: 100px;
+  @include setFlex(row, flex-end, center);
+  grid-row-start: 1;
+  grid-row-end: 2;
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.line {
+  width: 100%;
+  height: 4px;
+  background-color: $neon-purple;
+}
+
+.content-left {
+  width: 40%;
+  h3 {
+    color: white;
+  }
+}
+
+.content-right {
+  width: 50%;
+
+  form {
+    @include setFlex(column, center, center);
+    width: 100%;
+
+    button {
+      all: unset;
+      @include setButton(190px, 40px, $neon-green);
+      @include setFlex(row, center, center);
+      margin-top: 20px;
+      padding: 10px 24px 10px 24px;
+      &:hover {
+        transform: scale(1.1);
+        background-color: $neon-purple;
+        transition: 0.3s ease-in-out;
+      }
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .inactive {
+      @include setButton(190px, 40px, #b6b6b6);
+      cursor: default;
+      &:hover {
+        transform: scale(1);
+        background-color: #b6b6b6;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .checkbox {
+    display: none;
+  }
+
+  .checkbox + label.button1 {
+    width: 100%;
+    max-width: 24px;
+    margin-left: 8px;
+    margin-right: 8px;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    background-image: url("./../../../assets/img/icons/checkbox.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-transition: none;
+    -moz-transition: none;
+    transition: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .checkbox + label.button1:hover {
+    background-image: url("./../../../assets/img/icons/checkbox-hover.svg");
+  }
+
+  .checkbox:checked + label.button1 {
+    background-image: url("./../../../assets/img/icons/checkbox-checked.svg");
+  }
+
+  .checkbox:checked + label.button1:hover {
+    background-image: url("./../../../assets/img/icons/checkbox-checked-hover.svg");
+  }
+}
+
+.input-control {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  input {
+    all: unset;
+    border: 2px solid $neon-purple;
+    border-radius: 10px;
+    display: block;
+    font-size: 16px;
+    padding: 15px;
+    width: 90%;
+
+    &:focus {
+      outline: 0;
+      border: 2px solid $neon-green;
+    }
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    &::-ms-input-placeholder {
+      color: white;
+    }
+  }
+
+  textarea {
+    all: unset;
+    width: 90%;
+    height: 200px;
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid $neon-purple;
+
+    &:focus {
+      border: 1px solid $neon-green;
+    }
+
+    &::placeholder {
+      color: white;
+      opacity: 1;
+    }
+
+    &::-ms-input-placeholder {
+      color: white;
+    }
+  }
+
+  button {
+    cursor: pointer;
+  }
+}
+
+.input-control.success input {
+  border-color: $neon-green;
+}
+
+.input-control.error input {
+  border-color: $neon-red;
+}
+
+.input-control.success textarea {
+  border-color: $neon-green;
+}
+
+.input-control.error textarea {
+  border-color: $neon-red;
+}
+
+.input-control .error {
+  color: $neon-red;
+  font-size: 9px;
+  height: 13px;
+}
+
+.checkbox-container {
+  @include setFlex(row, flex-start, center);
+  width: 100%;
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+  a {
+    color: $neon-purple;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.error {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.d-none {
+  display: none;
+}

@@ -7,6 +7,8 @@ import { AboutComponent } from '../../components/about/about.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
 import { SandboxComponent } from '../../components/sandbox/sandbox.component';
 import { PortfoliosComponent } from '../../components/portfolios/portfolios.component';
+import { ContactComponent } from '../../components/contact/contact.component';
+import { UpComponent } from '../../components/up/up.component';
 
 @Component({
   selector: 'app-main-page',
@@ -18,6 +20,8 @@ import { PortfoliosComponent } from '../../components/portfolios/portfolios.comp
     AboutComponent,
     SkillsComponent,
     SandboxComponent,
+    ContactComponent,
+    UpComponent,
     CommonModule,
     PortfoliosComponent,
   ],
@@ -27,6 +31,6 @@ import { PortfoliosComponent } from '../../components/portfolios/portfolios.comp
 export class MainPageComponent implements OnInit {
   constructor() {}
   ngOnInit(): void {
-    // throw new Error('Method not implemented.');
+    const up = document.getElementById('up');
   }
 }
