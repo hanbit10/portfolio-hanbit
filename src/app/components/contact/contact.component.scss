@@ -5,8 +5,8 @@
   padding-top: 15vh;
   position: relative;
   display: grid;
-  grid-template-rows: 200px 600px;
-  grid-template-columns: 1fr 1440px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr auto 1fr;
   background-image: url("./../../../assets/img/shapes/shape8.svg");
   background-repeat: no-repeat;
   background-size: 35%;
@@ -25,7 +25,6 @@
 }
 
 .title-container {
-  width: 1390px;
   height: 100px;
   @include setFlex(row, flex-start, center);
   padding-left: 50px;
@@ -82,6 +81,7 @@
 
     .inactive {
       @include setButton(190px, 40px, #b6b6b6);
+      margin-bottom: 30px;
       cursor: default;
       &:hover {
         transform: scale(1);
@@ -227,4 +227,33 @@
 
 .d-none {
   display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    height: fit-content;
+    grid-template-rows: auto auto;
+  }
+
+  .title-container {
+    max-width: 80vw;
+    padding-left: 0;
+  }
+  .content {
+    @include setFlex(column, center, center);
+    max-width: 90vw;
+    height: fit-content;
+  }
+
+  .content-left {
+    width: 100%;
+  }
+
+  .content-right {
+    width: 100%;
+  }
+
+  .line {
+    margin-right: 8px;
+  }
 }
