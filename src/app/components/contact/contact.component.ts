@@ -32,7 +32,7 @@ export class ContactComponent implements OnInit {
       }
     });
 
-    checkbox.addEventListener('click', () => {
+    checkbox.addEventListener('click', (e) => {
       if (checkbox.checked) {
         button?.classList.remove('inactive');
       } else {

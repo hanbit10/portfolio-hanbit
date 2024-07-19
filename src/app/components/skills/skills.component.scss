@@ -55,6 +55,7 @@
   @include setButton(160px, 60px, $neon-green);
   @include setFlex(row, center, center);
   margin-top: 20px;
+
   cursor: pointer;
   &:hover {
     transform: scale(1.1);

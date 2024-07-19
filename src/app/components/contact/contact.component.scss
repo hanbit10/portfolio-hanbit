@@ -1,12 +1,16 @@
 @import "./../../../styles.scss";
 
 .container {
-  min-height: 50vh;
+  min-height: 80vh;
   padding-top: 15vh;
   position: relative;
   display: grid;
   grid-template-rows: 200px 600px;
   grid-template-columns: 1fr 1440px 1fr;
+  background-image: url("./../../../assets/img/shapes/shape8.svg");
+  background-repeat: no-repeat;
+  background-size: 35%;
+  background-position-y: 300px;
 }
 
 .content {
@@ -14,10 +18,6 @@
   width: 100%;
   max-width: 1440px;
   @include setFlex(row, space-between, flex-start);
-  background-image: url("./../../../assets/img/shapes/shape-profile.svg");
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position-y: 55%;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 2;
@@ -36,7 +36,6 @@
 }
 
 .line-container {
-  // background-color: aliceblue;
   width: 100%;
   height: 100px;
   @include setFlex(row, flex-end, center);
@@ -78,7 +77,7 @@
         transition: 0.3s ease-in-out;
       }
       transition: 0.3s ease-in-out;
-      // cursor: pointer;
+      cursor: pointer;
     }
 
     .inactive {
@@ -89,37 +88,6 @@
         background-color: #b6b6b6;
         pointer-events: none;
       }
-    }
-  }
-
-  .message {
-    color: $neon-red;
-  }
-
-  .text,
-  .email {
-    all: unset;
-    border-radius: 10px;
-    border: 1px solid $neon-purple;
-    width: 90%;
-    height: 20px;
-    padding: 15px 25px 15px 25px;
-    margin-bottom: 20px;
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
-    background-position: 97% 50%;
-
-    &::placeholder {
-      color: white;
-      opacity: 1;
-    }
-
-    &::-ms-input-placeholder {
-      color: white;
-    }
-
-    &:focus {
-      border: 1px solid $neon-green;
     }
   }
 
@@ -155,48 +123,6 @@
 
   .checkbox:checked + label.button1:hover {
     background-image: url("./../../../assets/img/icons/checkbox-checked-hover.svg");
-  }
-
-  .border-red {
-    border: 1px solid $neon-red;
-  }
-
-  .border-green {
-    border: 1px solid $neon-green;
-  }
-
-  // textarea {
-  //   all: unset;
-  //   width: 90%;
-  //   height: 200px;
-  //   border-radius: 10px;
-  //   padding: 15px 25px 15px 25px;
-  //   border: 1px solid $neon-purple;
-
-  //   background-repeat: no-repeat;
-  //   background-size: 25px 25px;
-  //   background-position: 97% 5%;
-
-  //   &:focus {
-  //     border: 1px solid $neon-green;
-  //   }
-  // }
-}
-
-.checkbox-container {
-  @include setFlex(row, flex-start, center);
-  width: 100%;
-  padding-top: 20px;
-  p {
-    font-size: 14px;
-  }
-  a {
-    color: $neon-purple;
-    text-decoration: none;
-    font-size: 14px;
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -275,6 +201,28 @@
   color: $neon-red;
   font-size: 9px;
   height: 13px;
+}
+
+.checkbox-container {
+  @include setFlex(row, flex-start, center);
+  width: 100%;
+  p {
+    font-size: 14px;
+    margin: 0;
+  }
+  a {
+    color: $neon-purple;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.error {
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 
 .d-none {
