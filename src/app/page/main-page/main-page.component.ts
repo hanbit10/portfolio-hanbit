@@ -5,7 +5,6 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from '../../components/profile/profile.component';
 import { AboutComponent } from '../../components/about/about.component';
 import { SkillsComponent } from '../../components/skills/skills.component';
-import { SandboxComponent } from '../../components/sandbox/sandbox.component';
 import { PortfoliosComponent } from '../../components/portfolios/portfolios.component';
 import { ContactComponent } from '../../components/contact/contact.component';
 import { UpComponent } from '../../components/up/up.component';
@@ -19,7 +18,6 @@ import { UpComponent } from '../../components/up/up.component';
     ProfileComponent,
     AboutComponent,
     SkillsComponent,
-    SandboxComponent,
     ContactComponent,
     UpComponent,
     CommonModule,

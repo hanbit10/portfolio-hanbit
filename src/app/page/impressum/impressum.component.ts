@@ -12,9 +12,7 @@ import { HeaderComponent } from '../../components/header/header.component';
   styleUrl: './impressum.component.scss',
 })
 export class ImpressumComponent implements OnInit {
-  ngOnInit(): void {
-    // throw new Error('Method not implemented.');
-  }
+  ngOnInit(): void {}
 
   constructor(private router: Router) {}
 }

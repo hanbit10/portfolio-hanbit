@@ -77,7 +77,6 @@
 }
 
 .line-container {
-  // background-color: antiquewhite;
   @include setFlex(row, flex-start, flex-start);
   grid-row-start: 1;
   grid-row-end: 2;

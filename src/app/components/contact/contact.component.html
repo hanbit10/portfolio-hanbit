@@ -15,10 +15,11 @@
       <p>Need a Frontend developer? Contact me!</p>
     </div>
     <div class="content-right">
-      <form id="form" (ngSubmit)="onSubmit()" action="/">
+      <form id="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="input-control">
           <label for="username"></label>
           <input
+            [(ngModel)]="contactData.name"
             id="username"
             name="username"
             type="text"
@@ -28,12 +29,19 @@
         </div>
         <div class="input-control">
           <label for="email"></label>
-          <input id="email" name="email" type="text" placeholder="Your email" />
+          <input
+            [(ngModel)]="contactData.email"
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Your email"
+          />
           <div class="error"></div>
         </div>
         <div class="input-control">
           <label for="textarea"></label>
           <textarea
+            [(ngModel)]="contactData.message"
             name="textarea"
             id="textarea"
             placeholder="Your message"
@@ -48,10 +56,13 @@
             class="checkbox"
           />
           <label for="checkbox" class="button1"></label>
-          <p>
-            I've read the <a href="">privacy policy</a> and agree to the
-            processing of my data as outlined.
-          </p>
+          <div class="checkbox-text">
+            I've read the
+            <div class="link" (click)="gotoPrivacyPolicy()">
+              &nbsp;privacy policy&nbsp;
+            </div>
+            and agree to the processing of my data as outlined.
+          </div>
           <div class="error"></div>
         </div>
         <button id="button" type="submit" class="inactive">Send message</button>
