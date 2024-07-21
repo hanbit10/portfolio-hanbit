@@ -15,20 +15,8 @@ export class ContactComponent implements OnInit {
   http = inject(HttpClient);
   checker = 0;
   ngOnInit(): void {
-    const form = <HTMLFormElement>document.getElementById('form');
-    const username = <HTMLInputElement>document.getElementById('username');
-    const email = <HTMLInputElement>document.getElementById('email');
-    const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
     const checkbox = <HTMLInputElement>document.getElementById('checkbox');
     const button = document.getElementById('button');
-
-    // form.addEventListener('submit', (e) => {
-    //   validateInputs();
-    //   if (this.checker < 4) {
-    //     e.preventDefault();
-    //   }
-    // });
-
     checkbox.addEventListener('click', (e) => {
       if (checkbox.checked) {
         button?.classList.remove('inactive');
@@ -36,74 +24,6 @@ export class ContactComponent implements OnInit {
         button?.classList.add('inactive');
       }
     });
-
-    // const setError = (element: any, message: any) => {
-    //   const inputControl = element.parentElement;
-    //   const errorDisplay = inputControl.querySelector('.error');
-    //   if (errorDisplay) {
-    //     errorDisplay.innerText = message;
-    //   }
-    //   inputControl.classList.add('error');
-    //   inputControl.classList.remove('success');
-    // };
-
-    // const setSuccess = (element: any) => {
-    //   const inputControl = element.parentElement;
-    //   const errorDisplay = inputControl.querySelector('.error');
-    //   if (errorDisplay) {
-    //     errorDisplay.innerText = '';
-    //   }
-    //   inputControl.classList.add('success');
-    //   inputControl.classList.remove('error');
-    // };
-
-    // const isValidEmail = (email: any) => {
-    //   const re =
-    //     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    //   return re.test(String(email).toLowerCase());
-    // };
-
-    // const validateInputs = () => {
-    //   const usernameValue = username.value.trim();
-    //   const emailValue = email.value.trim();
-    //   const textareaValue = textarea.value.trim();
-    //   const checkboxValue = checkbox.checked;
-
-    //   if (usernameValue == '') {
-    //     setError(username, 'Username is required');
-    //     this.checker = 0;
-    //   } else {
-    //     setSuccess(username);
-    //     this.checker += 1;
-    //   }
-
-    //   if (textareaValue == '') {
-    //     setError(textarea, 'Message is required');
-    //     this.checker = 0;
-    //   } else {
-    //     setSuccess(textarea);
-    //     this.checker += 1;
-    //   }
-
-    //   if (emailValue == '') {
-    //     setError(email, 'Email is required');
-    //     this.checker = 0;
-    //   } else if (!isValidEmail(emailValue)) {
-    //     setError(email, 'Provide a valid email address');
-    //     this.checker = 0;
-    //   } else {
-    //     setSuccess(email);
-    //     this.checker += 1;
-    //   }
-
-    //   if (checkboxValue) {
-    //     setSuccess(checkbox);
-    //     this.checker += 1;
-    //   } else {
-    //     setError(checkbox, 'Please accept the privacy policy');
-    //     this.checker = 0;
-    //   }
-    // };
   }
 
   setSuccess(element: any) {
@@ -133,16 +53,15 @@ export class ContactComponent implements OnInit {
   }
 
   validateInputs() {
-    const form = <HTMLFormElement>document.getElementById('form');
-    const username = <HTMLInputElement>document.getElementById('username');
-    const email = <HTMLInputElement>document.getElementById('email');
-    const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
-    const checkbox = <HTMLInputElement>document.getElementById('checkbox');
-    const usernameValue = username.value.trim();
-    const emailValue = email.value.trim();
-    const textareaValue = textarea.value.trim();
-    const checkboxValue = checkbox.checked;
+    this.setUserName();
+    this.setTextArea();
+    this.setEmail();
+    this.setCheckbox();
+  }
 
+  setUserName() {
+    const username = <HTMLInputElement>document.getElementById('username');
+    const usernameValue = username.value.trim();
     if (usernameValue == '') {
       this.setError(username, 'Username is required');
       this.checker = 0;
@@ -150,7 +69,11 @@ export class ContactComponent implements OnInit {
       this.setSuccess(username);
       this.checker += 1;
     }
+  }
 
+  setTextArea() {
+    const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
+    const textareaValue = textarea.value.trim();
     if (textareaValue == '') {
       this.setError(textarea, 'Message is required');
       this.checker = 0;
@@ -158,7 +81,11 @@ export class ContactComponent implements OnInit {
       this.setSuccess(textarea);
       this.checker += 1;
     }
+  }
 
+  setEmail() {
+    const email = <HTMLInputElement>document.getElementById('email');
+    const emailValue = email.value.trim();
     if (emailValue == '') {
       this.setError(email, 'Email is required');
       this.checker = 0;
@@ -169,7 +96,11 @@ export class ContactComponent implements OnInit {
       this.setSuccess(email);
       this.checker += 1;
     }
+  }
 
+  setCheckbox() {
+    const checkbox = <HTMLInputElement>document.getElementById('checkbox');
+    const checkboxValue = checkbox.checked;
     if (checkboxValue) {
       this.setSuccess(checkbox);
       this.checker += 1;
@@ -180,12 +111,12 @@ export class ContactComponent implements OnInit {
   }
 
   mailTest = false;
-
   contactData = {
     name: '',
     email: '',
     message: '',
   };
+
   post = {
     endPoint: 'https://hanbit-chang.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -198,35 +129,39 @@ export class ContactComponent implements OnInit {
   };
   onSubmit(ngForm: NgForm) {
     this.validateInputs();
-    console.log('submitted', ngForm.submitted);
-    console.log('valid', ngForm.form.valid);
-    console.log('checked', this.mailTest);
-    console.log('checker', this.checker);
+    if (this.formValidate(ngForm)) {
+      try {
+        this.http
+          .post(this.post.endPoint, this.post.body(this.contactData))
+          .subscribe({
+            next: (response) => {
+              ngForm.resetForm();
+            },
+            error: (error) => {
+              console.error(error);
+            },
+            complete: () => console.info('send post complete'),
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    } else if (this.formInvalidate(ngForm)) {
+      ngForm.resetForm();
+    }
+  }
 
-    if (
+  formValidate(ngForm: NgForm) {
+    return (
       ngForm.submitted &&
       ngForm.form.valid &&
       !this.mailTest &&
       this.checker >= 4
-    ) {
-      this.http
-        .post(this.post.endPoint, this.post.body(this.contactData))
-        .subscribe({
-          next: (response) => {
-            ngForm.resetForm();
-          },
-          error: (error) => {
-            console.error(error);
-          },
-          complete: () => console.info('send post complete'),
-        });
-    } else if (
-      ngForm.submitted &&
-      ngForm.form.valid &&
-      this.mailTest &&
-      this.checker < 4
-    ) {
-      ngForm.resetForm();
-    }
+    );
+  }
+
+  formInvalidate(ngForm: NgForm) {
+    return (
+      ngForm.submitted && ngForm.form.valid && this.mailTest && this.checker < 4
+    );
   }
 }
