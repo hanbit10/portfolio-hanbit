@@ -14,9 +14,17 @@
     </div>
     <div class="container-right">
       <div class="nav">
-        <a href="#about">About me</a>
-        <a href="#skills">Skills</a>
-        <a href="#portfolios">Portfolio</a>
+        <a id="about" href="#about">{{
+          translateService.getTranslation("header.nav1")
+        }}</a>
+        <a id="skills" href="#skills">{{
+          translateService.getTranslation("header.nav2")
+        }}</a>
+        <a id="portfolios" href="#portfolios">
+          {{ translateService.getTranslation("header.nav3") }}</a
+        >
+        <div class="language" (click)="changeLanguage('en')">EN</div>
+        <div class="language" (click)="changeLanguage('de')">DE</div>
       </div>
       <div class="burger-nav">
         <label class="hamburger-menu">
@@ -24,10 +32,32 @@
         </label>
         <aside class="sidebar" id="sidebar">
           <nav>
-            <a href="#about" (click)="closeNav()">About me</a>
-            <a href="#skills" (click)="closeNav()">Skills</a>
-            <a href="#portfolios" (click)="closeNav()">Portfolio</a>
-            <a href="#contact" (click)="closeNav()">Contact</a>
+            <a href="#about" (click)="closeNav()">
+              {{ translateService.getTranslation("header.nav1") }}</a
+            >
+            <a href="#skills" (click)="closeNav()">
+              {{ translateService.getTranslation("header.nav2") }}
+            </a>
+            <a href="#portfolios" (click)="closeNav()">
+              {{ translateService.getTranslation("header.nav3") }}</a
+            >
+            <a href="#contact" (click)="closeNav()">
+              {{ translateService.getTranslation("header.nav4") }}</a
+            >
+            <div
+              class="language"
+              (click)="closeNav()"
+              (click)="changeLanguage('en')"
+            >
+              EN
+            </div>
+            <div
+              class="language"
+              (click)="closeNav()"
+              (click)="changeLanguage('de')"
+            >
+              DE
+            </div>
           </nav>
         </aside>
       </div>

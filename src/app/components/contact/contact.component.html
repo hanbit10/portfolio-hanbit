@@ -3,16 +3,15 @@
     <div class="line"></div>
   </div>
   <div class="title-container">
-    <h1>Contact</h1>
+    <h1>{{ translateService.getTranslation("contact.title") }}</h1>
   </div>
   <div class="content">
     <div class="content-left">
-      <h3>Got a problem to solve?</h3>
+      <h3>{{ translateService.getTranslation("contact.subtitle") }}</h3>
       <p>
-        Contact me through this form, I am interested in hearing from you,
-        knowing your ideas and contributing to your projects with my work.
+        {{ translateService.getTranslation("contact.text1") }}
       </p>
-      <p>Need a Frontend developer? Contact me!</p>
+      <p>{{ translateService.getTranslation("contact.text2") }}</p>
     </div>
     <div class="content-right">
       <form id="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
@@ -23,7 +22,7 @@
             id="username"
             name="username"
             type="text"
-            placeholder="Your name"
+            placeholder="{{ translateService.getTranslation('contact.name') }}"
           />
           <div class="error"></div>
         </div>
@@ -34,7 +33,7 @@
             id="email"
             name="email"
             type="text"
-            placeholder="Your email"
+            placeholder="{{ translateService.getTranslation('contact.email') }}"
           />
           <div class="error"></div>
         </div>
@@ -44,7 +43,9 @@
             [(ngModel)]="contactData.message"
             name="textarea"
             id="textarea"
-            placeholder="Your message"
+            placeholder="{{
+              translateService.getTranslation('contact.message')
+            }}"
           ></textarea>
           <div class="error"></div>
         </div>
@@ -57,15 +58,19 @@
           />
           <label for="checkbox" class="button1"></label>
           <p class="checkbox-text">
-            I've read the
+            {{ translateService.getTranslation("contact.privacy1") }}
             <a class="link" (click)="gotoPrivacyPolicy()"
-              >&nbsp;privacy policy&nbsp;</a
+              >&nbsp;{{
+                translateService.getTranslation("contact.privacy2")
+              }}&nbsp;</a
             >
-            and agree to the processing of my data as outlined.
+            {{ translateService.getTranslation("contact.privacy3") }}
           </p>
           <div class="error"></div>
         </div>
-        <button id="button" type="submit" class="inactive">Send message</button>
+        <button id="button" type="submit" class="inactive">
+          {{ translateService.getTranslation("contact.send") }}
+        </button>
       </form>
     </div>
   </div>

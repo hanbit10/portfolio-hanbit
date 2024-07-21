@@ -7,7 +7,7 @@
       <a href="https://github.com/hanbit10" target="_blank">
         <img src="./assets/img/buttons/github-button.svg" alt="github" />
       </a>
-      <a href="chanbit10@gmail.com">
+      <a href="#contact">
         <img src="./assets/img/buttons/mail-button.svg" alt="mail" />
       </a>
       <a href="https://www.linkedin.com/in/hanbitchang/" target="_blank">
@@ -18,27 +18,21 @@
   </div>
   <div class="content">
     <div class="content-left">
-      <h1>About Me</h1>
+      <h1>{{ translateService.getTranslation("about.title") }}</h1>
       <p>
-        I am a frontend developer based in Aachen, with a degree in Informatics
-        from RWTH Aachen University and a completed bootcamp from Developer
-        Akademie. I thrive in the world of frontend development, focusing on
-        creating intuitive and engaging user interfaces. I am passionate about
-        continuous learning and staying updated with the latest industry trends.
+        {{ translateService.getTranslation("about.text1") }}
       </p>
       <div class="text-container">
         <img src="./assets/img/icons/bulbs/bulb.svg" alt="" />
         <div class="about-text">
-          I create innovative and user-friendly web solutions. My designs are
-          both functional and engaging, ensuring efficiency and appeal.
+          {{ translateService.getTranslation("about.text2") }}
         </div>
       </div>
       <br />
       <div class="text-container">
         <img src="./assets/img/icons/puzzles/puzzle.svg" alt="" />
         <div class="about-text">
-          I use fundamental technologies like HTML, CSS, and JavaScript for the
-          web development.
+          {{ translateService.getTranslation("about.text3") }}
         </div>
       </div>
     </div>
