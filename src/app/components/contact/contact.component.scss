@@ -44,6 +44,19 @@
   grid-column-end: 2;
 }
 
+.link {
+  color: $neon-purple;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.checkbox-text {
+  @include setFlex(row, center, center);
+}
+
 .line {
   width: 100%;
   height: 4px;

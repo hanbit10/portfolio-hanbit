@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -11,7 +12,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router) {}
   http = inject(HttpClient);
   checker = 0;
   ngOnInit(): void {
@@ -163,5 +164,9 @@ export class ContactComponent implements OnInit {
     return (
       ngForm.submitted && ngForm.form.valid && this.mailTest && this.checker < 4
     );
+  }
+
+  gotoPrivacyPolicy() {
+    this.router.navigate(['/policy']);
   }
 }
