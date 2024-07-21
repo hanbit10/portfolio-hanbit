@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 .container {
-  min-height: 100vh;
+  // min-height: 100vh;
   padding-top: 15vh;
   position: relative;
   @include setFlex(column, center, center);
@@ -85,7 +85,7 @@
 .vector {
   position: absolute;
   width: 100%;
-  top: 37%;
+  top: 40%;
   left: 0;
 }
 
@@ -127,9 +127,9 @@
   }
 
   .vector {
-    width: 100vw;
-    aspect-ratio: 3/7;
-    top: 0px;
+    width: 100%;
+    aspect-ratio: 3/4;
+    top: 40%;
     left: 0;
   }
 

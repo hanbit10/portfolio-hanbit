@@ -4,8 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-sandbox',
   standalone: true,
   imports: [],
-  templateUrl: './sandbox.component.html',
-  styleUrl: './sandbox.component.scss',
+  templateUrl: './sandbox2.component.html',
+  styleUrl: './sandbox2.component.scss',
 })
 export class SandboxComponent implements OnInit {
   constructor() {}
