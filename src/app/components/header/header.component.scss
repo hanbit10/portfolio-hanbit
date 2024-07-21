@@ -6,6 +6,7 @@
   left: 0;
   @include setFlex($direction: row, $justify: space-between, $align: center);
   width: 100%;
+  max-width: 100vw;
   height: 15vh;
   background-color: $background-color;
   z-index: 100;
@@ -41,6 +42,10 @@
 
 .logo-container {
   @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+  a {
+    @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+    text-decoration: none;
+  }
 }
 
 .logo {
@@ -54,4 +59,127 @@
 
 .purple {
   color: $neon-purple;
+}
+
+.burger-nav {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .container {
+    height: 100px;
+  }
+  .content {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  $bar-width: 40px;
+  $bar-height: 2px;
+  $hamburger-gap: 16px;
+  $foreground: #868686;
+  $background: white;
+  $hamburger-margin: 16px;
+  $animation-timing: 200ms ease-in-out;
+  $hamburger-height: calc($bar-height * 3 + $hamburger-gap * 2);
+  $x-width: calc($hamburger-height * 1.41421356237);
+
+  .nav {
+    display: none;
+  }
+
+  .burger-nav {
+    display: block;
+  }
+
+  .burger-container {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    @include setFlex(column, center, center);
+  }
+
+  .hamburger-menu {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: $hamburger-gap;
+    position: absolute;
+    top: $hamburger-margin;
+    right: $hamburger-margin;
+    z-index: 15;
+    cursor: pointer;
+  }
+
+  .hamburger-menu:has(input:checked) {
+    $foreground: white;
+    $background: #333;
+  }
+
+  .hamburger-menu::before,
+  .hamburger-menu::after,
+  .hamburger-menu input {
+    content: "";
+    width: $bar-width;
+    height: $bar-height;
+    background-color: white;
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity $animation-timing, width $animation-timing,
+      rotate $animation-timing, translate $animation-timing,
+      background-color $animation-timing;
+
+    &:hover {
+      background-color: $neon-green;
+    }
+  }
+
+  .hamburger-menu input {
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+  }
+
+  .hamburger-menu:has(input:checked)::before {
+    rotate: 45deg;
+    width: $x-width;
+    translate: 0 calc($bar-height / -2);
+  }
+
+  .hamburger-menu:has(input:checked)::after {
+    rotate: -45deg;
+    width: $x-width;
+    translate: 0 calc($bar-height / 2);
+  }
+
+  .hamburger-menu input:checked {
+    opacity: 0;
+    width: 0;
+  }
+
+  .sidebar {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    transition: translate $animation-timing;
+    translate: 100%;
+    padding-top: calc($hamburger-height + $hamburger-margin + 1rem);
+    background-color: rgb(138, 138, 138);
+    color: $background;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+  }
+
+  .hamburger-menu:has(input:checked) + .sidebar {
+    translate: 0;
+  }
+
+  nav {
+    @include setFlex(column, space-between, center);
+  }
 }

@@ -1,20 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
-*,
-html,
-body {
-  scroll-behavior: smooth !important;
-}
-
-html:focus-within {
-  scroll-behavior: smooth !important;
-  transform: 1s ease-in-out;
-}
-
 $neon-purple: #9747ff;
 $neon-blue: #1cdae6;
 $neon-green: #70e61c;
 $neon-red: #e61c40;
 $background-color: #141d2f;
+
+body {
+  margin: 0;
+  background-color: $background-color;
+  font-family: Poppins;
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth !important;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 50px;
+  background: transparent !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $neon-blue;
+  border-radius: 50px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(130deg, $neon-blue 0%, $neon-green 100%);
+}
 
 @font-face {
   font-family: Poppins;
@@ -29,19 +52,6 @@ $background-color: #141d2f;
 @font-face {
   font-family: Poppins900;
   src: url("./assets/fonts/poppins-v21-latin-900.woff2");
-}
-
-html {
-  overflow: hidden;
-  overflow-y: scroll;
-}
-
-body {
-  margin: 0;
-  background-color: $background-color;
-  font-family: Poppins;
-  color: white;
-  width: 100vw;
 }
 
 @mixin setFont($weight: normal, $size: 24px) {
@@ -94,4 +104,14 @@ h4 {
   color: $neon-green;
   font-family: Poppins;
   margin: 0;
+}
+
+@media screen and (max-width: 1100px) {
+  h1 {
+    font-size: 45px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
 }

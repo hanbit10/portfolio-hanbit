@@ -2,18 +2,35 @@
   <div class="content">
     <div class="container-left">
       <div class="logo-container">
-        <div class="logo green">H</div>
-        <div class="logo">a</div>
-        <div class="logo">n</div>
-        <div class="logo">b</div>
-        <div class="logo purple">i</div>
-        <div class="logo">t</div>
+        <a href="#profile">
+          <div class="logo green">H</div>
+          <div class="logo">a</div>
+          <div class="logo">n</div>
+          <div class="logo">b</div>
+          <div class="logo purple">i</div>
+          <div class="logo">t</div></a
+        >
       </div>
     </div>
     <div class="container-right">
-      <a href="#about">About me</a>
-      <a href="#skills">Skills</a>
-      <a href="#portfolios">Portfolio</a>
+      <div class="nav">
+        <a href="#about">About me</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolios">Portfolio</a>
+      </div>
+      <div class="burger-nav">
+        <label class="hamburger-menu">
+          <input id="burger-checkbox" type="checkbox" />
+        </label>
+        <aside class="sidebar" id="sidebar">
+          <nav>
+            <a href="#about" (click)="closeNav()">About me</a>
+            <a href="#skills" (click)="closeNav()">Skills</a>
+            <a href="#portfolios" (click)="closeNav()">Portfolio</a>
+            <a href="#contact" (click)="closeNav()">Contact</a>
+          </nav>
+        </aside>
+      </div>
     </div>
   </div>
 </div>

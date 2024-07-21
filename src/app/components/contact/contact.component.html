@@ -15,48 +15,7 @@
       <p>Need a Frontend developer? Contact me!</p>
     </div>
     <div class="content-right">
-      <!-- <form action="">
-        <input
-          id="text"
-          type="text"
-          class="text"
-          placeholder="Your name"
-          minlength="4"
-          required
-        />
-        <p class="message d-none">Your name is required</p>
-        <input
-          id="email"
-          type="email"
-          class="email"
-          placeholder="Your email"
-          required
-          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-        />
-        <p class="message d-none">Your email is required</p>
-        <textarea
-          id="text-area"
-          type="text"
-          placeholder="Your message"
-          required
-          minlength="10"
-        ></textarea>
-        <p class="message d-none">Your message is empty</p>
-        <div class="checkbox-container">
-          <input type="checkbox" id="checkbox" class="checkbox" required />
-          <label for="checkbox" class="button1"></label>
-          <p>
-            I've read the <a href="">privacy policy</a> and agree to the
-            processing of my data as outlined.
-          </p>
-          <p class="message d-none">Please accept the privacy policy</p>
-        </div>
-        <button id="button" type="submit" class="btn inactive">
-          Send message
-        </button>
-      </form> -->
-
-      <form id="form" action="/">
+      <form id="form" (ngSubmit)="onSubmit()" action="/">
         <div class="input-control">
           <label for="username"></label>
           <input
