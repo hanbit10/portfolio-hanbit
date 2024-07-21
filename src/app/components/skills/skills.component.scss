@@ -49,6 +49,7 @@
   width: 100%;
   max-width: 570px;
   @include setFlex(column, center, center);
+  text-align: center;
   padding-top: 40px;
   z-index: 2;
 }

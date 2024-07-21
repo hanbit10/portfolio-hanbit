@@ -56,13 +56,13 @@
             class="checkbox"
           />
           <label for="checkbox" class="button1"></label>
-          <div class="checkbox-text">
+          <p class="checkbox-text">
             I've read the
-            <div class="link" (click)="gotoPrivacyPolicy()">
-              &nbsp;privacy policy&nbsp;
-            </div>
+            <a class="link" (click)="gotoPrivacyPolicy()"
+              >&nbsp;privacy policy&nbsp;</a
+            >
             and agree to the processing of my data as outlined.
-          </div>
+          </p>
           <div class="error"></div>
         </div>
         <button id="button" type="submit" class="inactive">Send message</button>

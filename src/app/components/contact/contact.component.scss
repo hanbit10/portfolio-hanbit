@@ -54,7 +54,8 @@
 }
 
 .checkbox-text {
-  @include setFlex(row, center, center);
+  @include setFlex(row, flex-start, center);
+  flex-wrap: wrap;
 }
 
 .line {
@@ -65,6 +66,7 @@
 
 .content-left {
   width: 40%;
+  margin-right: 10px;
   h3 {
     color: white;
   }
