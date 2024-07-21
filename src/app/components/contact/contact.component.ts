@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, inject, OnInit } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -10,18 +11,9 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnInit {
-  onSubmit() {
-    throw new Error('Method not implemented.');
-  }
   constructor() {}
   checker = 0;
   ngOnInit(): void {
-    // let inputText = <HTMLInputElement>document.getElementById('text');
-    // let inputEmail = <HTMLInputElement>document.getElementById('email');
-    // let textArea = <HTMLInputElement>document.getElementById('text-area');
-    // let button = <HTMLButtonElement>document.getElementById('button');
-    // let checkbox = <HTMLInputElement>document.getElementById('checkbox');
-
     const form = <HTMLFormElement>document.getElementById('form');
     const username = <HTMLInputElement>document.getElementById('username');
     const email = <HTMLInputElement>document.getElementById('email');
@@ -111,5 +103,43 @@ export class ContactComponent implements OnInit {
         this.checker = 0;
       }
     };
+  }
+
+  contactData = {
+    name: '',
+    email: '',
+    message: '',
+  };
+
+  mailTest = true;
+
+  http = inject(HttpClient);
+
+  post = {
+    endPoint: 'https://deineDomain.de/sendMail.php',
+    body: (payload: any) => JSON.stringify(payload),
+    options: {
+      headers: {
+        'Content-Type': 'text/plain',
+        responseType: 'text',
+      },
+    },
+  };
+  onSubmit(ngForm: NgForm) {
+    if (ngForm.submitted && ngForm.form.valid && !this.mailTest) {
+      this.http
+        .post(this.post.endPoint, this.post.body(this.contactData))
+        .subscribe({
+          next: (response) => {
+            ngForm.resetForm();
+          },
+          error: (error) => {
+            console.error(error);
+          },
+          complete: () => console.info('send post complete'),
+        });
+    } else if (ngForm.submitted && ngForm.form.valid && this.mailTest) {
+      ngForm.resetForm();
+    }
   }
 }

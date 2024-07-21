@@ -15,10 +15,11 @@
       <p>Need a Frontend developer? Contact me!</p>
     </div>
     <div class="content-right">
-      <form id="form" (ngSubmit)="onSubmit()" action="/">
+      <form id="form" (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
         <div class="input-control">
           <label for="username"></label>
           <input
+            [(ngModel)]="contactData.name"
             id="username"
             name="username"
             type="text"
@@ -28,12 +29,19 @@
         </div>
         <div class="input-control">
           <label for="email"></label>
-          <input id="email" name="email" type="text" placeholder="Your email" />
+          <input
+            [(ngModel)]="contactData.email"
+            id="email"
+            name="email"
+            type="text"
+            placeholder="Your email"
+          />
           <div class="error"></div>
         </div>
         <div class="input-control">
           <label for="textarea"></label>
           <textarea
+            [(ngModel)]="contactData.message"
             name="textarea"
             id="textarea"
             placeholder="Your message"
