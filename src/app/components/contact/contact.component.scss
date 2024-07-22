@@ -1,8 +1,7 @@
 @import "./../../../styles.scss";
 
 .container {
-  min-height: 85vh;
-  padding-top: 15vh;
+  height: 100vh;
   position: relative;
   display: grid;
   grid-template-rows: auto auto;
@@ -11,6 +10,7 @@
   background-repeat: no-repeat;
   background-size: 35%;
   background-position-y: 300px;
+  overflow: hidden;
 }
 
 .content {
@@ -67,6 +67,7 @@
 .content-left {
   width: 40%;
   margin-right: 200px;
+  margin-left: 50px;
   h3 {
     color: white;
   }
@@ -222,6 +223,7 @@
 .checkbox-container {
   @include setFlex(row, flex-start, center);
   width: 100%;
+  margin-right: 20px;
   p {
     font-size: 14px;
     margin: 0;
@@ -249,12 +251,14 @@
   .container {
     height: fit-content;
     grid-template-rows: auto auto;
+    padding-top: 0;
   }
 
   .title-container {
     max-width: 80vw;
     padding-left: 0;
   }
+
   .content {
     @include setFlex(column, center, center);
     max-width: 90vw;
@@ -263,6 +267,7 @@
 
   .content-left {
     width: 100%;
+    margin-right: 0;
   }
 
   .content-right {

@@ -6,6 +6,7 @@
   position: relative;
   @include setFlex(column, flex-start, center);
   margin-bottom: 100px;
+  overflow: hidden;
 }
 
 .content {
@@ -95,7 +96,16 @@
   z-index: 10;
 }
 
+@media only screen and (max-width: 1300px) {
+  .text {
+    font-size: 42px;
+  }
+}
+
 @media only screen and (max-width: 1100px) {
+  .container {
+    overflow: hidden;
+  }
   .content {
     height: 85vh;
     @include setFlex(column, flex-start, center);
