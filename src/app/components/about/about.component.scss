@@ -12,6 +12,7 @@
   display: grid;
   grid-template-rows: 100px auto-fit;
   grid-template-columns: 1fr auto 1fr;
+  margin-bottom: 100px;
 }
 
 .line-content {
@@ -54,6 +55,7 @@
 
 .content-left {
   @include setFlex(column, flex-start, center);
+  margin-right: 200px;
   p {
     width: 100%;
     max-width: 480px;

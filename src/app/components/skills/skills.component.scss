@@ -25,6 +25,7 @@
 }
 
 .content-left {
+  margin-right: 200px;
   width: 100%;
   max-width: 720px;
   @include setFlex(column, center, center);
