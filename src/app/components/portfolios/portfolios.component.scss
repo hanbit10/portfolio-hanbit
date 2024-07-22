@@ -96,6 +96,18 @@
   aspect-ratio: 1/1;
 }
 
+@keyframes smoothappear-right {
+  0% {
+    padding-left: 0px;
+    opacity: 0;
+  }
+
+  100% {
+    padding-left: 30px;
+    opacity: 1;
+  }
+}
+
 .portfolio-info {
   width: 50%;
   height: fit-content;

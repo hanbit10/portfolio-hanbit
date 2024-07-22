@@ -1,29 +1,29 @@
 @import "./../../../styles.scss";
 
 .container {
+  width: 100%;
+  height: 85vh;
   position: relative;
   @include setFlex(column, center, center);
 }
 
 .content {
-  position: relative;
   width: 100%;
   max-width: 1440px;
   @include setFlex(row, space-between, center);
   background-image: url("./../../../assets/img/shapes/shape-profile.svg");
   background-repeat: no-repeat;
-  background-size: 50%;
+  background-size: 45%;
   background-position-y: 55%;
 }
 
 .content-left {
   @include setFlex(column, center, center);
-  padding-left: 40px;
+  padding-left: 50px;
   img {
-    padding-left: 40px;
-    width: 450px;
+    padding-left: 50px;
+    width: 400px;
     aspect-ratio: 6/9;
-    animation: smoothappear-right 1s ease-in-out forwards;
   }
 }
 
@@ -39,50 +39,34 @@
   max-width: 55px;
   padding-right: 30px;
   padding-top: 10px;
-  animation: smoothappear 1s ease-in-out forwards;
 }
 
 .hanbit-chang {
   right: 20px;
-  animation: smoothappear 1s ease-in-out forwards;
 }
 
-@keyframes smoothappear-right {
-  0% {
-    padding-left: 0px;
-    opacity: 0;
-  }
-
-  100% {
-    padding-left: 30px;
-    opacity: 1;
-  }
+.hidden {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(-20%);
+  transition: all 1s;
 }
 
-@keyframes smoothappear {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+.hidden-right {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateX(20%);
+  transition: all 1s;
 }
 
-@keyframes smoothappear-left {
-  0% {
-    margin-left: 20px; /* Assuming you want to move it down 20px, you can adjust this value */
-    opacity: 0;
-  }
-
-  100% {
-    margin-left: 0;
-    opacity: 1;
-  }
+.show {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
 }
 
 .text {
   @include setFont(normal, 58px);
-  animation: smoothappear 1s ease-in-out forwards;
 }
 
 .name-container {
@@ -118,7 +102,7 @@
 .vector {
   position: absolute;
   width: 100%;
-  top: 40%;
+  top: 10%;
   left: 0;
 }
 

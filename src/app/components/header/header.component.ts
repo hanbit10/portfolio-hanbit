@@ -11,6 +11,7 @@ import { TranslateService } from '../../service/translate.service';
 })
 export class HeaderComponent implements OnInit {
   constructor(public translateService: TranslateService) {}
+
   ngOnInit(): void {
     const burgerCheckbox = <HTMLInputElement>(
       document.getElementById('burger-checkbox')
