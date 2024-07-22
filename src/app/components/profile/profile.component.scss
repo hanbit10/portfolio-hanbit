@@ -24,6 +24,7 @@
     padding-left: 40px;
     width: 450px;
     aspect-ratio: 6/9;
+    animation: smoothappear-right 1s ease-in-out forwards;
   }
 }
 
@@ -38,17 +39,51 @@
   width: 100%;
   max-width: 55px;
   padding-right: 30px;
+  padding-top: 10px;
+  animation: smoothappear 1s ease-in-out forwards;
 }
 
-.i-am {
-  height: 100%;
-  font-size: 64px;
-  letter-spacing: 5px;
-  transform: rotate(270deg);
+.hanbit-chang {
+  right: 20px;
+  animation: smoothappear 1s ease-in-out forwards;
+}
+
+@keyframes smoothappear-right {
+  0% {
+    padding-left: 0px;
+    opacity: 0;
+  }
+
+  100% {
+    padding-left: 30px;
+    opacity: 1;
+  }
+}
+
+@keyframes smoothappear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes smoothappear-left {
+  0% {
+    margin-left: 20px; /* Assuming you want to move it down 20px, you can adjust this value */
+    opacity: 0;
+  }
+
+  100% {
+    margin-left: 0;
+    opacity: 1;
+  }
 }
 
 .text {
   @include setFont(normal, 58px);
+  animation: smoothappear 1s ease-in-out forwards;
 }
 
 .name-container {
