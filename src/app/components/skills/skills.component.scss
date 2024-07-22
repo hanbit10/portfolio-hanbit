@@ -59,10 +59,11 @@
 }
 
 .btn {
-  @include setButton(160px, 60px, $neon-green);
+  @include setButton(160px, fit-content, $neon-green);
   @include setFlex(row, center, center);
+  padding-top: 10px;
+  padding-bottom: 10px;
   margin-top: 20px;
-
   cursor: pointer;
   &:hover {
     transform: scale(1.1);

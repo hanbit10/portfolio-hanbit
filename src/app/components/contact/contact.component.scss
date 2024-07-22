@@ -81,7 +81,7 @@
 
     button {
       all: unset;
-      @include setButton(190px, 40px, $neon-green);
+      @include setButton(fit-content, 40px, $neon-green);
       @include setFlex(row, center, center);
       margin-top: 20px;
       margin-bottom: 30px;
@@ -96,7 +96,7 @@
     }
 
     .inactive {
-      @include setButton(190px, 40px, #b6b6b6);
+      @include setButton(fit-content, 40px, #b6b6b6);
       margin-bottom: 30px;
       cursor: default;
       &:hover {
