@@ -14,12 +14,12 @@ export class TranslateService {
         nav4: 'Contact',
       },
       profile: {
-        button: 'Lets talk!',
+        button: "Let's talk!",
       },
       about: {
         title: 'About Me',
         text1:
-          'I am a frontend developer based in Aachen, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in the world of frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
+          'I am a frontend developer based in Aachen, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
         text2:
           'I create innovative and user-friendly web solutions. My designs are both functional and engaging, ensuring efficiency and appeal.',
         text3:
@@ -62,7 +62,7 @@ export class TranslateService {
         title: 'Contact',
         subtitle: 'Got a problem to solve?',
         text1:
-          'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.',
+          'Contact me through this form, I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.',
         text2: 'Need a Frontend developer? Contact me!',
         name: 'Your name',
         email: 'Your email',

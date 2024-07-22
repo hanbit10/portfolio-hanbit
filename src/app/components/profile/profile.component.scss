@@ -1,10 +1,10 @@
 @import "./../../../styles.scss";
 
 .container {
+  @include setFlex(row, center, flex-start);
   width: 100%;
   height: 85vh;
   position: relative;
-  @include setFlex(column, flex-start, center);
   margin-bottom: 100px;
   overflow: hidden;
 }
@@ -13,18 +13,18 @@
   position: relative;
   width: 100%;
   max-width: 1440px;
+  padding-left: 100px;
+  padding-right: 100px;
   @include setFlex(row, space-between, center);
   background-image: url("./../../../assets/img/shapes/shape-profile.svg");
   background-repeat: no-repeat;
-  background-size: 45%;
-  background-position-y: 55%;
+  background-size: 40%;
+  background-position-y: 60%;
 }
 
 .content-left {
   @include setFlex(column, center, center);
-  padding-left: 50px;
   img {
-    padding-left: 50px;
     width: 400px;
     aspect-ratio: 6/9;
   }
@@ -32,7 +32,6 @@
 
 .content-right {
   @include setFlex(column, space-between, center);
-  padding-right: 40px;
   width: 100%;
   z-index: 2;
 }
@@ -61,7 +60,7 @@
 }
 
 .row {
-  @include setFlex(row, center, center);
+  @include setFlex(row, flex-end, center);
   width: 100%;
 }
 
@@ -106,6 +105,7 @@
   .container {
     overflow: hidden;
   }
+
   .content {
     height: 85vh;
     @include setFlex(column, flex-start, center);
@@ -141,8 +141,8 @@
 
   .vector {
     width: 100%;
-    aspect-ratio: 3/4;
-    top: 40%;
+    aspect-ratio: 1/1;
+    top: 10%;
     left: 0;
   }
 

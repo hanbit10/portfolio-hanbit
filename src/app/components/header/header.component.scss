@@ -1,12 +1,8 @@
 @import "./../../../styles.scss";
 
 .container {
-  // position: fixed;
-  top: 0;
-  left: 0;
-  @include setFlex($direction: row, $justify: space-between, $align: center);
+  @include setFlex(row, center, center);
   width: 100%;
-  max-width: 100vw;
   height: 15vh;
   background-color: $background-color;
   z-index: 100;
@@ -28,10 +24,11 @@
 
 .content {
   width: 100%;
+  max-width: 1440px;
   height: fit-content;
   padding-right: 100px;
   padding-left: 100px;
-  @include setFlex($direction: row, $justify: space-between, $align: center);
+  @include setFlex(row, space-between, center);
 }
 
 .container-left {
@@ -55,9 +52,9 @@
 }
 
 .logo-container {
-  @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+  @include setFlex(row, flex-start, flex-start);
   a {
-    @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+    @include setFlex(row, flex-start, flex-start);
     text-decoration: none;
   }
 }

@@ -29,7 +29,11 @@
       </div>
     </div>
     <div class="content-right hidden-right">
-      <h1>{{ translateService.getTranslation("skills.title") }}</h1>
+      <div class="title-container">
+        <h1>{{ translateService.getTranslation("skills.title") }}</h1>
+        <div class="line"></div>
+      </div>
+
       <p>
         {{ translateService.getTranslation("skills.text1") }}
       </p>
@@ -40,7 +44,5 @@
       </div>
     </div>
   </div>
-  <div class="line-container hidden-right">
-    <div class="line"></div>
-  </div>
+  <div class="line-container hidden-right"></div>
 </div>
