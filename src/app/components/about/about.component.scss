@@ -51,7 +51,7 @@
 .content-right {
   @include setFlex(row, center, center);
   position: relative;
-  margin-right: 200px;
+  margin-right: min(200px, 5%);
   .profile-line {
     position: absolute;
     left: 100%;
