@@ -18,6 +18,12 @@
 
 .language {
   @include setButton(30px, 30px);
+  margin: 14px;
+  &:hover {
+    background-color: $neon-purple;
+    transition: 0.3s ease-in-out;
+  }
+  transition: 0.3s ease-in-out;
 }
 
 .content {

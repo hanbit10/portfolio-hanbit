@@ -1,7 +1,6 @@
 @import "./../../../styles.scss";
 
 .container {
-  padding-top: 15vh;
   position: relative;
   @include setFlex(column, center, center);
 }
