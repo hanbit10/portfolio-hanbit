@@ -1,4 +1,4 @@
-<div id="about" class="container">
+<div class="container">
   <div class="line-container">
     <div class="line"></div>
   </div>
@@ -16,8 +16,8 @@
     </section>
     <span>chanbit10&#64;gmail.com</span>
   </div>
-  <div class="content">
-    <div class="content-left">
+  <div id="about" class="content">
+    <div class="content-left hidden">
       <h1>{{ translateService.getTranslation("about.title") }}</h1>
       <p>
         {{ translateService.getTranslation("about.text1") }}
@@ -36,11 +36,11 @@
         </div>
       </div>
     </div>
-    <div class="content-right">
+    <div class="content-right hidden-right">
       <div class="profile-img"></div>
     </div>
   </div>
-  <div class="profile-line-container">
+  <div class="profile-line-container hidden-right">
     <div class="profile-line"></div>
   </div>
 </div>

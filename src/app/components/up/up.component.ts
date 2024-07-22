@@ -14,7 +14,7 @@ export class UpComponent implements OnInit {
     var myScrollFunc = function () {
       var y = window.scrollY;
       if (up) {
-        if (y >= 800) {
+        if (y >= 700) {
           up.classList.remove('d-none');
         } else {
           up.classList.add('d-none');
