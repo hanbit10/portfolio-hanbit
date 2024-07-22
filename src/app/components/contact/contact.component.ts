@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { TranslateService } from '../../service/translate.service';
 
 @Component({
   selector: 'app-contact',
@@ -12,7 +13,10 @@ import { Router } from '@angular/router';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    public translateService: TranslateService
+  ) {}
   http = inject(HttpClient);
   checker = 0;
   ngOnInit(): void {

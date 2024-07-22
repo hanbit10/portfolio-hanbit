@@ -7,7 +7,7 @@
       <a href="https://github.com/hanbit10" target="_blank">
         <img src="./assets/img/buttons/github-button.svg" alt="github" />
       </a>
-      <a href="chanbit10@gmail.com">
+      <a href="#contact">
         <img src="./assets/img/buttons/mail-button.svg" alt="mail" />
       </a>
       <a href="https://www.linkedin.com/in/hanbitchang/" target="_blank">
@@ -18,13 +18,23 @@
   </div>
   <div class="content">
     <div class="content-left">
-      <h1>About Me</h1>
+      <h1>{{ translateService.getTranslation("about.title") }}</h1>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia
-        obcaecati, exercitationem repellat explicabo tempora hic, perspiciatis
-        velit in excepturi dolore dolorum ullam ipsum aperiam minima
-        consequuntur quaerat molestias laboriosam quo.
+        {{ translateService.getTranslation("about.text1") }}
       </p>
+      <div class="text-container">
+        <img src="./assets/img/icons/bulbs/bulb.svg" alt="" />
+        <div class="about-text">
+          {{ translateService.getTranslation("about.text2") }}
+        </div>
+      </div>
+      <br />
+      <div class="text-container">
+        <img src="./assets/img/icons/puzzles/puzzle.svg" alt="" />
+        <div class="about-text">
+          {{ translateService.getTranslation("about.text3") }}
+        </div>
+      </div>
     </div>
     <div class="content-right">
       <div class="profile-img"></div>

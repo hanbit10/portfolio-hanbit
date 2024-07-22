@@ -29,13 +29,14 @@
       </div>
     </div>
     <div class="content-right">
-      <h1>My skills</h1>
+      <h1>{{ translateService.getTranslation("skills.title") }}</h1>
       <p>
-        I have gained experience in building projects with various front end
-        technologies and concepts.
+        {{ translateService.getTranslation("skills.text1") }}
       </p>
       <div class="btn">
-        <a href="#contact">Get in touch</a>
+        <a href="#contact">{{
+          translateService.getTranslation("skills.button1")
+        }}</a>
       </div>
     </div>
   </div>

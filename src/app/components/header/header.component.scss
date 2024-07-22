@@ -1,7 +1,7 @@
 @import "./../../../styles.scss";
 
 .container {
-  position: fixed;
+  // position: fixed;
   top: 0;
   left: 0;
   @include setFlex($direction: row, $justify: space-between, $align: center);
@@ -10,6 +10,20 @@
   height: 15vh;
   background-color: $background-color;
   z-index: 100;
+}
+
+.nav {
+  @include setFlex(row, flex-end, center);
+}
+
+.language {
+  @include setButton(30px, 30px);
+  margin: 14px;
+  &:hover {
+    background-color: $neon-purple;
+    transition: 0.3s ease-in-out;
+  }
+  transition: 0.3s ease-in-out;
 }
 
 .content {
@@ -90,6 +104,10 @@
     display: none;
   }
 
+  .language {
+    margin-top: 24px;
+  }
+
   .burger-nav {
     display: block;
   }
@@ -162,7 +180,7 @@
   }
 
   .sidebar {
-    position: absolute;
+    position: fixed;
     top: 100px;
     left: 0;
     transition: translate $animation-timing;
@@ -173,6 +191,7 @@
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
+    z-index: 15;
   }
 
   .hamburger-menu:has(input:checked) + .sidebar {

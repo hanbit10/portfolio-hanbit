@@ -5,13 +5,12 @@
     </div>
     <div class="title-container">
       <div class="line3"></div>
-      <h1>Portfolio</h1>
+      <h1>{{ translateService.getTranslation("portfolio.title") }}</h1>
       <div class="line3"></div>
     </div>
     <div class="title-text">
       <p>
-        Explore a selection of my work here - Interact with projects to see my
-        skills in action.
+        {{ translateService.getTranslation("portfolio.text1") }}
       </p>
     </div>
     <div class="line-container2">
@@ -27,19 +26,17 @@
           alt=""
         />
       </div>
-
       <div class="portfolio-info">
         <h3>Join</h3>
         <h4>Angular | TypeScript | HTML | CSS | Firebase</h4>
         <p>
-          Task manager inspired by the Kanban System. Create and organize tasks
-          using drag and drop functions, assign users and categories.
+          {{ translateService.getTranslation("portfolio.portfolio1.text") }}
         </p>
         <div class="btn-container">
           <div class="btn purple">
-            <a href="https://join-187.developerakademie.net/login.html"
-              >Live test</a
-            >
+            <a href="https://join-187.developerakademie.net/login.html">{{
+              translateService.getTranslation("portfolio.button1")
+            }}</a>
           </div>
           <div class="btn transparent">
             <a href="https://github.com/hanbit10/Join" target="_blank"
@@ -61,16 +58,15 @@
         <h3 id="title">El Polo Loco</h3>
         <h4 id="skills">JavaScript | HTML | CSS</h4>
         <p id="description">
-          Jump and Run Game with object-oriented approach. Help Pepe find coins
-          and throw Tabasco bottles to fight against the crazy chicken.
+          {{ translateService.getTranslation("portfolio.portfolio2.text") }}
         </p>
         <div class="btn-container">
           <div class="btn purple">
             <a
               href="https://hanbit-chang.developerakademie.net/el-pollo-loco/src/index.html"
             >
-              Live test</a
-            >
+              {{ translateService.getTranslation("portfolio.button1") }}
+            </a>
           </div>
           <div class="btn transparent">
             <a
@@ -94,11 +90,12 @@
         <h3>Simple CRM</h3>
         <h4>Angular | Firebase</h4>
         <p>
-          A very Simple Customer Relationship Management system working with
-          CRUD functionality.
+          {{ translateService.getTranslation("portfolio.portfolio3.text") }}
         </p>
         <div class="btn-container">
-          <div class="btn purple">Live test</div>
+          <div class="btn purple">
+            {{ translateService.getTranslation("portfolio.button1") }}
+          </div>
           <div class="btn transparent">Github</div>
         </div>
       </div>
@@ -115,14 +112,13 @@
         <h3 id="title">Pokédex</h3>
         <h4 id="skills">JavaScript | HTML | CSS | API</h4>
         <p id="description">
-          Based on the PokéAPI a simple library that provides and catalogues
-          pokemon information.
+          {{ translateService.getTranslation("portfolio.portfolio4.text") }}
         </p>
         <div class="btn-container">
           <div class="btn purple">
             <a
               href="https://hanbit-chang.developerakademie.net/pokedex/index.html"
-              >Live test</a
+              >{{ translateService.getTranslation("portfolio.button1") }}</a
             >
           </div>
           <div class="btn transparent">

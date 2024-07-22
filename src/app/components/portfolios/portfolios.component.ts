@@ -1,5 +1,6 @@
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '../../service/translate.service';
 
 @Component({
   selector: 'app-portfolios',
@@ -9,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './portfolios.component.scss',
 })
 export class PortfoliosComponent implements OnInit {
-  constructor() {}
+  constructor(public translateService: TranslateService) {}
   ngOnInit(): void {
     for (let i = 1; i <= 4; i++) {
       if (i % 2 == 0) {
