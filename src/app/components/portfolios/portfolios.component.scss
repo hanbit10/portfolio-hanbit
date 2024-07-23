@@ -25,13 +25,12 @@
   max-width: 1440px;
   padding-left: 100px;
   padding-right: 100px;
-  @include setFlex(row, space-between, center);
+  @include setFlex(row, center, center);
 }
 
 .title-box {
   position: relative;
-  width: 100%;
-  max-width: 500px;
+  width: fit-content;
   @include setFlex(row, center, center);
 }
 
