@@ -4,7 +4,7 @@ import { texts } from '../constants/text';
   providedIn: 'root',
 })
 export class TranslateService {
-  private currentLanguage = 'en';
+  public currentLanguage = 'en';
   private translations: any = texts;
   constructor() {}
 
