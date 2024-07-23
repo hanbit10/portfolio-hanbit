@@ -81,6 +81,14 @@ html {
   cursor: pointer;
 }
 
+.policy-link {
+  color: $neon-blue;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 h1 {
   @include setFont(bold, 80px);
   font-family: Poppins700;
@@ -105,6 +113,24 @@ h4 {
   color: $neon-green;
   font-family: Poppins;
   margin: 0;
+}
+
+.privacy-container {
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 24px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 1300px) {

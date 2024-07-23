@@ -21,4 +21,8 @@ export class FooterComponent implements OnInit {
       window.open('/impressum', '_blank');
     });
   }
+
+  gotoProfile() {
+    this.router.navigate(['/']);
+  }
 }

@@ -17,15 +17,21 @@
 }
 
 .container-left {
-  @include setFlex(
-    $direction: column,
-    $justify: flex-start,
-    $align: flex-start
-  );
+  @include setFlex(column, flex-start, flex-start);
 }
 
 .logo-container {
-  @include setFlex($direction: row, $justify: flex-start, $align: flex-start);
+  @include setFlex(row, flex-start, flex-start);
+
+  text-decoration: none;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+  cursor: pointer;
 }
 
 .logo {

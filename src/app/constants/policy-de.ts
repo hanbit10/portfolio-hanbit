@@ -1,4 +1,6 @@
-const policyDE: any = /*html*/ `<h1>Datenschutzerklärung</h1>
+const policyDE: any = /*html*/ `
+<div class="privacy-container">
+<h1>Datenschutzerklärung</h1>
 <h2>1. Datenschutz auf einen Blick</h2>
 <h3>Allgemeine Hinweise</h3>
 <p>
@@ -63,7 +65,7 @@ const policyDE: any = /*html*/ `<h1>Datenschutzerklärung</h1>
   Ren&eacute; M&uuml;nnich, Hauptstra&szlig;e 68, 02742 Friedersdorf
   (nachfolgend All-Inkl). Details entnehmen Sie der
   Datenschutzerkl&auml;rung von All-Inkl:
-  <a
+  <a class="policy-link"
     href="https://all-inkl.com/datenschutzinformationen/"
     target="_blank"
     rel="noopener noreferrer"
@@ -350,7 +352,8 @@ const policyDE: any = /*html*/ `<h1>Datenschutzerklärung</h1>
   unber&uuml;hrt.
 </p>
 <p>
-  Quelle: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
-</p>`;
+  Quelle: <a class="policy-link" href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+</p>
+</div>`;
 
 export { policyDE };

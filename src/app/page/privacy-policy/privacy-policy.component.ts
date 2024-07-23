@@ -24,7 +24,6 @@ export class PrivacyPolicyComponent implements OnInit {
 
     function setPolicy(translateService: any) {
       if (column) {
-        console.log(translateService.currentLanguage);
         if (translateService.currentLanguage == 'en') {
           column.innerHTML = policyEN;
         } else {

@@ -1,4 +1,5 @@
 const policyEN: any = /*html*/ `
+<div class="privacy-container">
 <h1>Privacy Policy</h1>
 <h2>1. Privacy at a Glance</h2>
 <h3>General Information</h3>
@@ -39,6 +40,7 @@ const policyEN: any = /*html*/ `
   (hereinafter All-Inkl). For details, see the
   privacy policy of All-Inkl:
   <a
+    class="policy-link"
     href="https://all-inkl.com/datenschutzinformationen/"
     target="_blank"
     rel="noopener noreferrer"
@@ -163,8 +165,10 @@ const policyEN: any = /*html*/ `
   The data you send to us via contact inquiries will remain with us until you request its deletion, revoke your consent to storage, or the purpose for storing the data no longer applies (e.g., after your request has been processed). Mandatory legal provisions – especially statutory retention periods – remain unaffected.
 </p>
 <p>
-  Source: <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
+  Source: <a class="policy-link" href="https://www.e-recht24.de">https://www.e-recht24.de</a>
 </p>
+</div>
+
 `;
 
 export { policyEN };
