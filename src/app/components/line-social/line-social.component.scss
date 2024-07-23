@@ -48,3 +48,31 @@
     transition: 0.3s ease-in-out;
   }
 }
+
+@media screen and (max-width: 1100px) {
+  .container {
+    margin-top: 200px;
+  }
+
+  .line-content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  span {
+    display: none;
+  }
+
+  .social-network {
+    img {
+      padding: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .line-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+}

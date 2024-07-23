@@ -10,11 +10,12 @@ body {
   background-color: $background-color;
   font-family: Poppins;
   color: white;
+  overflow: hidden;
 }
 
 html {
   scroll-behavior: smooth !important;
-  overflow: hidden;
+  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -81,14 +82,14 @@ html {
 }
 
 h1 {
-  @include setFont(bold, 90px);
+  @include setFont(bold, 80px);
   font-family: Poppins700;
   margin: 0;
   color: #ffffff;
 }
 
 h2 {
-  @include setFont(normal, 64px);
+  @include setFont(normal, 56px);
   color: #ffffff;
 }
 

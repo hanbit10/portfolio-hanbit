@@ -3,20 +3,19 @@
 .container {
   min-height: 100vh;
   position: relative;
-  @include setFlex(column, flex-start, center);
+  @include setFlex(row, center, flex-start);
   background-image: url("./../../../assets/img/shapes/shape6.svg");
   background-repeat: no-repeat;
   background-size: 35%;
   background-position-x: 120%;
   background-position-y: 55%;
   margin-bottom: 100px;
-  overflow: hidden;
 }
 
 .title-container {
   height: fit-content;
   position: relative;
-  @include setFlex(row, flex-start, center);
+  @include setFlex(row, center, center);
   overflow: hidden;
 }
 
@@ -28,6 +27,10 @@
   @include setFlex(row, center, center);
 }
 
+.text-section {
+  @include setFlex(row, center, center);
+}
+
 .title-box {
   position: relative;
   width: fit-content;
@@ -36,7 +39,11 @@
 
 .title-text {
   @include setFlex(row, center, center);
+  width: 100%;
+  max-width: 1440px;
   font-size: 16px;
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .line1 {
@@ -55,10 +62,6 @@
   height: 4px;
   background-color: $neon-purple;
   margin-left: 8px;
-}
-
-.line3 {
-  display: none;
 }
 
 .content {
@@ -80,6 +83,15 @@
   width: 100%;
   max-width: 400px;
   aspect-ratio: 1/1;
+}
+
+.secure {
+  width: 100%;
+  max-width: 1440px;
+  height: fit-content;
+  @include setFlex(row, center, center);
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .portfolio-info {
@@ -139,8 +151,22 @@
 }
 
 @media screen and (max-width: 1100px) {
+  .title-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .title-text {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .secure {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   .container {
-    overflow: hidden;
     padding-top: 20px;
   }
   .portfolio {
@@ -188,5 +214,22 @@
       justify-content: center;
       margin-left: 0;
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-section {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .title-text {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .secure {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

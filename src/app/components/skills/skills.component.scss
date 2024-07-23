@@ -9,7 +9,7 @@
   background-size: 30%;
   background-position-y: 55%;
   @include setFlex(row, center, flex-start);
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   overflow: hidden;
 }
 
@@ -105,6 +105,8 @@
 
   .content {
     @include setFlex(column-reverse, center, center);
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .content-left {
@@ -127,6 +129,11 @@
 }
 
 @media screen and (max-width: 480px) {
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
   .logo-container {
     img {
       max-width: 50px;

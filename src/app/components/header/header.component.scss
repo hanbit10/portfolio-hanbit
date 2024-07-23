@@ -81,8 +81,8 @@
     height: 100px;
   }
   .content {
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 50px;
+    padding-left: 50px;
   }
 }
 
@@ -197,5 +197,12 @@
 
   nav {
     @include setFlex(column, space-between, center);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .content {
+    padding-right: 25px;
+    padding-left: 25px;
   }
 }

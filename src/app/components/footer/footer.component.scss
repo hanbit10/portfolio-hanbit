@@ -2,12 +2,18 @@
 
 .container {
   position: relative;
-  @include setFlex($direction: row, $justify: space-between, $align: center);
+  @include setFlex(row, center, center);
   height: 30vh;
   padding-top: 20px;
-  padding-right: 100px;
-  padding-left: 100px;
   border-top: 4px solid $neon-green;
+}
+
+.content {
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(row, space-between, center);
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .container-left {

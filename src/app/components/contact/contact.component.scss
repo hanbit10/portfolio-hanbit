@@ -248,14 +248,19 @@
   }
 
   .title-container {
-    max-width: 80vw;
     padding-left: 0;
+  }
+
+  .title-content {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .content {
     @include setFlex(column, center, center);
-    max-width: 90vw;
     height: fit-content;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .content-left {
@@ -269,5 +274,17 @@
 
   .line {
     margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }
