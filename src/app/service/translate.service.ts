@@ -15,6 +15,7 @@ export class TranslateService {
       },
       profile: {
         button: "Let's talk!",
+        scroll: 'Scroll down',
       },
       about: {
         title: 'About Me',
@@ -73,6 +74,9 @@ export class TranslateService {
         privacy2: 'privacy policy',
         privacy3: 'and agree to the processing of my data as outlined',
       },
+      footer: {
+        imprint: 'Imprint',
+      },
     },
     de: {
       header: {
@@ -83,6 +87,7 @@ export class TranslateService {
       },
       profile: {
         button: 'Lass uns reden!',
+        scroll: 'Nach unten scrollen',
       },
       about: {
         title: 'Über mich',
@@ -142,6 +147,9 @@ export class TranslateService {
         privacy2: 'Datenschutzerklärung',
         privacy3:
           'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu',
+      },
+      footer: {
+        imprint: 'Impressum',
       },
     },
   };

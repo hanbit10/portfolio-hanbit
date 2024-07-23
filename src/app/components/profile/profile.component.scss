@@ -90,9 +90,17 @@
 
 .scrolldown {
   position: absolute;
-  bottom: 10%;
-  right: 3%;
+  @include setFlex(row, center, center);
+  bottom: 15%;
+  right: 2%;
   z-index: 10;
+  rotate: 90deg;
+  img {
+    padding-top: 10px;
+    width: 24px;
+    height: 24px;
+    rotate: -90deg;
+  }
 }
 
 @media only screen and (max-width: 1300px) {

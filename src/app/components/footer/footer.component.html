@@ -9,7 +9,9 @@
         <div class="logo purple">i</div>
         <div class="logo">t</div>
       </div>
-      <div class="impressum" (click)="gotoImpressum()">Impressum</div>
+      <div class="impressum" (click)="gotoImpressum()">
+        {{ trasnlateService.getTranslation("footer.imprint") }}
+      </div>
     </div>
     <div class="text">©Hanbit Chang 2024</div>
     <section class="social-network">
