@@ -171,6 +171,8 @@ export class ContactComponent implements OnInit {
   }
 
   gotoPrivacyPolicy() {
-    this.router.navigate(['/policy']);
+    this.router.navigate([]).then((result) => {
+      window.open('/policy', '_blank');
+    });
   }
 }

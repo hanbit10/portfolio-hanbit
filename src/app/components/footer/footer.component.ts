@@ -17,6 +17,8 @@ export class FooterComponent implements OnInit {
   ) {}
   ngOnInit(): void {}
   gotoImpressum() {
-    this.router.navigate(['/impressum']);
+    this.router.navigate([]).then((result) => {
+      window.open('/impressum', '_blank');
+    });
   }
 }
