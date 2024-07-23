@@ -1,22 +1,18 @@
-<div id="portfolios" class="container">
+<div class="title-container">
   <section class="title-section hidden-right">
-    <div class="line-container1">
+    <div class="title-box">
       <div class="line1"></div>
-    </div>
-    <div class="title-container">
-      <div class="line3"></div>
       <h1>{{ translateService.getTranslation("portfolio.title") }}</h1>
-      <div class="line3"></div>
-    </div>
-    <div class="title-text">
-      <p>
-        {{ translateService.getTranslation("portfolio.text1") }}
-      </p>
-    </div>
-    <div class="line-container2">
       <div class="line2"></div>
     </div>
   </section>
+</div>
+<div class="title-text hidden-right">
+  <p>
+    {{ translateService.getTranslation("portfolio.text1") }}
+  </p>
+</div>
+<div id="portfolios" class="container">
   <div class="content">
     <div class="portfolio hidden-right" id="1">
       <div class="img-container">
