@@ -9,11 +9,9 @@
   background-size: 35%;
   background-position-x: 120%;
   background-position-y: 55%;
-  // margin-bottom: 100px;
 }
 
 .title-container {
-  margin-top: 10vh;
   height: fit-content;
   position: relative;
   @include setFlex(row, center, center);
