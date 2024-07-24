@@ -2,9 +2,9 @@
 
 .container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   @include setFlex(row, center, center);
-  height: 20vh;
+  height: 150px;
   border-top: 4px solid $neon-green;
   background-color: $background-color;
   z-index: 10;

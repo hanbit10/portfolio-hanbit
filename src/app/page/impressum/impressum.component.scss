@@ -16,6 +16,12 @@ a {
   }
 }
 
+.page-container {
+  @include setFlex(column, space-between, center);
+  height: 100vh;
+  width: 100vw;
+}
+
 .container {
   position: relative;
   width: 100%;
