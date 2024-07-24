@@ -34,6 +34,10 @@
   @include setFlex(column, space-between, center);
   width: 100%;
   z-index: 2;
+  a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .iam {
@@ -75,11 +79,6 @@
     background-color: $neon-purple;
   }
   transition: 0.3s ease-in-out;
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
 }
 
 .vector {
