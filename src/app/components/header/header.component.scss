@@ -13,6 +13,7 @@
 }
 
 .language {
+  @include setFlex(row, center, center);
   @include setButton(30px, 30px);
   margin: 14px;
   &:hover {
