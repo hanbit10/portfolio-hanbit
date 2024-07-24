@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { TranslateService } from '../../service/translate.service';
 
 @Component({
@@ -10,8 +10,9 @@ import { TranslateService } from '../../service/translate.service';
   styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
-  constructor(public translateService: TranslateService) {}
+  @Output() myData = new EventEmitter<any>();
 
+  constructor(public translateService: TranslateService) {}
   ngOnInit(): void {
     const burgerCheckbox = <HTMLInputElement>(
       document.getElementById('burger-checkbox')
@@ -22,6 +23,15 @@ export class HeaderComponent implements OnInit {
       } else {
         document.documentElement.style.overflowY = 'auto';
       }
+    });
+
+    const en = document.getElementById('en');
+    const de = document.getElementById('de');
+    en?.addEventListener('click', (e) => {
+      this.myData.emit('en');
+    });
+    de?.addEventListener('click', (e) => {
+      this.myData.emit('de');
     });
   }
   closeNav() {

@@ -22,6 +22,7 @@
             id="username"
             name="username"
             type="text"
+            (focusout)="setUserName()"
             placeholder="{{ translateService.getTranslation('contact.name') }}"
           />
           <div class="error"></div>
@@ -33,6 +34,7 @@
             id="email"
             name="email"
             type="text"
+            (focusout)="setEmail()"
             placeholder="{{ translateService.getTranslation('contact.email') }}"
           />
           <div class="error"></div>
@@ -43,6 +45,7 @@
             [(ngModel)]="contactData.message"
             name="textarea"
             id="textarea"
+            (focusout)="setTextArea()"
             placeholder="{{
               translateService.getTranslation('contact.message')
             }}"
@@ -54,6 +57,7 @@
             type="checkbox"
             name="checkbox"
             id="checkbox"
+            (focusout)="setCheckbox()"
             class="checkbox"
           />
           <label for="checkbox" class="button1"></label>

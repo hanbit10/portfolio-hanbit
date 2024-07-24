@@ -66,6 +66,11 @@ const texts = {
       privacy1: "I've read the",
       privacy2: 'privacy policy',
       privacy3: 'and agree to the processing of my data as outlined',
+      input1: 'Username is required',
+      input2: 'Email is required',
+      input3: 'Provide a valid email address',
+      input4: 'Message is required',
+      input5: 'Please accept the privacy policy',
     },
     footer: {
       imprint: 'Imprint',
@@ -145,6 +150,11 @@ const texts = {
       privacy2: 'Datenschutzerklärung',
       privacy3:
         'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu',
+      input1: 'Name ist erforderlich',
+      input2: 'E-Mail ist erforderlich',
+      input3: 'Bitte geben Sie eine gültige E-Mail-Adresse an',
+      input4: 'Nachricht ist erforderlich',
+      input5: 'Bitte akzeptieren Sie die Datenschutzrichtlinie',
     },
     footer: {
       imprint: 'Impressum',
