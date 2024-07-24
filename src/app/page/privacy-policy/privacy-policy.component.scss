@@ -1,5 +1,9 @@
 @import "./../../../styles.scss";
 
+html {
+  scroll-behavior: none;
+}
+
 h1 {
   font-size: 48px;
 }

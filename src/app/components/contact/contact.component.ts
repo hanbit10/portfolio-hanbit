@@ -207,8 +207,8 @@ export class ContactComponent implements OnInit {
   }
 
   gotoPrivacyPolicy() {
-    this.router.navigate([]).then((result) => {
-      window.open('/policy', '_blank');
+    this.router.navigate(['/policy']).then(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     });
   }
 }
