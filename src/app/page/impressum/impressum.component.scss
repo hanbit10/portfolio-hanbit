@@ -19,13 +19,15 @@ a {
 .container {
   position: relative;
   width: 100%;
-  margin-top: 15vh;
+  margin-top: 10vh;
+  height: 65vh;
   @include setFlex(row, center, flex-start);
   background-image: url("./../../../assets/img/shapes/shape6.svg");
   background-repeat: no-repeat;
   background-size: 15%;
   background-position-x: 100%;
   background-position-y: 55%;
+  overflow-y: scroll;
 }
 
 .content {

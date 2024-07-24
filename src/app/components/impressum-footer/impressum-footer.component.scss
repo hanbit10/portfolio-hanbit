@@ -1,8 +1,7 @@
 @import "./../../../styles.scss";
 
 .container {
-  position: absolute;
-  bottom: 0;
+  position: relative;
   width: 100%;
   @include setFlex(row, center, center);
   height: 20vh;
@@ -84,10 +83,9 @@
 
 @media screen and (max-width: 1100px) {
   .container {
-    top: 90%;
     flex-direction: column;
     height: fit-content;
-    position: absolute;
+    position: relative;
   }
 
   .content {
@@ -107,6 +105,6 @@
 
 @media screen and (max-width: 480px) {
   .container {
-    position: absolute;
+    position: relative;
   }
 }
