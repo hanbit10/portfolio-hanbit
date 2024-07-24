@@ -75,10 +75,10 @@
   @include setFlex(row, center, center);
   &:hover {
     transform: scale(1.1);
-    transition: 0.3s ease-in-out;
+    transition: 0.15s ease-in-out;
     background-color: $neon-purple;
   }
-  transition: 0.3s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 
 .vector {

@@ -177,11 +177,15 @@ export class ContactComponent implements OnInit {
           .subscribe({
             next: (response) => {
               ngForm.resetForm();
+              const checkbox = <HTMLInputElement>(
+                document.getElementById('checkbox')
+              );
+              if (checkbox) checkbox.checked = false;
             },
             error: (error) => {
               console.error(error);
             },
-            complete: () => console.info('send post complete'),
+            complete: () => alert('send post complete'),
           });
       } catch (error) {
         console.error(error);
