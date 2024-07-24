@@ -3,8 +3,7 @@
 .container {
   position: relative;
   @include setFlex(row, center, center);
-  min-height: 30vh;
-  padding-top: 20px;
+  min-height: 200px;
   border-top: 4px solid $neon-green;
 }
 

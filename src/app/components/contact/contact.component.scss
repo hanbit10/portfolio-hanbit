@@ -18,7 +18,7 @@
 }
 
 .content {
-  margin-top: 10vh;
+  margin-top: 15vh;
   position: relative;
   width: 100%;
   max-width: 1440px;
@@ -69,7 +69,6 @@
 
 .content-right {
   width: 50%;
-
   form {
     @include setFlex(column, center, center);
     width: 100%;
@@ -265,6 +264,7 @@
   }
 
   .content {
+    margin-top: 10vh;
     @include setFlex(column, center, center);
     height: fit-content;
     padding-left: 50px;
