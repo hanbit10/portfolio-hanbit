@@ -20,14 +20,12 @@ a {
   position: relative;
   width: 100%;
   margin-top: 15vh;
-  height: 50vh;
   @include setFlex(row, center, flex-start);
   background-image: url("./../../../assets/img/shapes/shape6.svg");
   background-repeat: no-repeat;
   background-size: 15%;
   background-position-x: 100%;
   background-position-y: 55%;
-  // margin-bottom: 100px;
 }
 
 .content {
