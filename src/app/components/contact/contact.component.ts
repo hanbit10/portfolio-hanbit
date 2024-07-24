@@ -180,7 +180,9 @@ export class ContactComponent implements OnInit {
               const checkbox = <HTMLInputElement>(
                 document.getElementById('checkbox')
               );
+              const button = document.getElementById('button');
               if (checkbox) checkbox.checked = false;
+              if (button) button.classList.add('inactive');
             },
             error: (error) => {
               console.error(error);
