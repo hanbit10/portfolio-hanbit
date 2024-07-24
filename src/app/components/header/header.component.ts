@@ -34,6 +34,11 @@ export class HeaderComponent implements OnInit {
       this.myData.emit('de');
     });
   }
+
+  gotoHeader(): void {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }
+
   closeNav() {
     const checkbox = <HTMLInputElement>(
       document.getElementById('burger-checkbox')

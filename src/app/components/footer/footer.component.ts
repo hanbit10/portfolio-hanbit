@@ -22,7 +22,7 @@ export class FooterComponent implements OnInit {
     });
   }
 
-  gotoProfile() {
-    this.router.navigate(['/']);
+  gotoHeader() {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }
 }
