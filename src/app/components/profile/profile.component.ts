@@ -2,11 +2,12 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '../../service/translate.service';
 import { AnimateService } from '../../service/animate.service';
+import { LineSocialComponent } from '../line-social/line-social.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, LineSocialComponent],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
 })

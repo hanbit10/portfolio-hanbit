@@ -1,7 +1,6 @@
 @import "./../../../styles.scss";
 
 .container {
-  min-height: 85vh;
   position: relative;
   @include setFlex(row, center, flex-start);
   background-image: url("./../../../assets/img/shapes/shape8.svg");

@@ -3,9 +3,10 @@
 .container {
   position: relative;
   width: 100%;
-  z-index: 4;
-  @include setFlex(row, center, flex-start);
+  height: 10vh;
+  @include setFlex(row, center, center);
   overflow: hidden;
+  z-index: 4;
 }
 
 .line-content {
@@ -32,6 +33,7 @@
   width: 100vw;
   height: 4px;
   background-color: $neon-purple;
+  z-index: 10;
 }
 
 .social-network {
@@ -49,9 +51,6 @@
 }
 
 @media screen and (max-width: 1100px) {
-  .container {
-    margin-top: 100px;
-  }
   .line-content {
     padding-left: 50px;
     padding-right: 50px;
@@ -69,9 +68,6 @@
 }
 
 @media screen and (max-width: 480px) {
-  .container {
-    margin-top: 0;
-  }
   .line-content {
     padding-left: 25px;
     padding-right: 25px;

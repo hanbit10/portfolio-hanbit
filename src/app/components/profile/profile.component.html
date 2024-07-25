@@ -1,27 +1,46 @@
 <div id="profile" class="container">
   <div class="content">
-    <div class="content-left">
-      <img
-        class="hanbit-profile hidden"
-        src="./assets/img/profile/file4.png"
-        alt=""
-        priority
-        draggable="false"
-      />
-    </div>
-    <div class="content-right hidden-right">
-      <div class="row">
-        <img class="iam" src="./assets/img/icons/iam.svg" alt="" />
-        <div class="name-container">
-          <h1 class="hanbit-chang">Hanbit Chang</h1>
-          <div class="text purple">FRONTEND DEVELOPER</div>
+    <div class="secure">
+      <div class="content-row">
+        <div class="content-left">
+          <img
+            class="hidden"
+            src="./assets/img/profile/file4.png"
+            alt=""
+            priority
+            draggable="false"
+          />
+        </div>
+        <div class="content-right hidden-right">
+          <div class="row">
+            <img class="iam" src="./assets/img/icons/iam.svg" alt="" />
+            <div class="name-container">
+              <h1 class="hanbit-chang">Hanbit Chang</h1>
+              <div class="text purple">FRONTEND DEVELOPER</div>
+            </div>
+          </div>
+          <a href="#contact">
+            <div class="btn">
+              {{ translateService.getTranslation("profile.button") }}
+            </div></a
+          >
         </div>
       </div>
-      <a href="#contact">
-        <div class="btn">
-          {{ translateService.getTranslation("profile.button") }}
-        </div></a
-      >
+      <div class="line-content">
+        <div class="line"></div>
+        <section class="social-network">
+          <a href="https://github.com/hanbit10" target="_blank">
+            <img src="./assets/img/buttons/github-button.svg" alt="github" />
+          </a>
+          <a href="#contact">
+            <img src="./assets/img/buttons/mail-button.svg" alt="mail" />
+          </a>
+          <a href="https://www.linkedin.com/in/hanbitchang/" target="_blank">
+            <img src="./assets/img/buttons/linked-button.svg" alt="linkedin" />
+          </a>
+        </section>
+        <span>chanbit10&#64;gmail.com</span>
+      </div>
     </div>
     <div class="scrolldown">
       <span>{{ translateService.getTranslation("profile.scroll") }}</span
