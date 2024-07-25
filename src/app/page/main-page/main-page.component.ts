@@ -8,7 +8,6 @@ import { SkillsComponent } from '../../components/skills/skills.component';
 import { PortfoliosComponent } from '../../components/portfolios/portfolios.component';
 import { ContactComponent } from '../../components/contact/contact.component';
 import { UpComponent } from '../../components/up/up.component';
-import { LineSocialComponent } from '../../components/line-social/line-social.component';
 
 @Component({
   selector: 'app-main-page',
@@ -17,7 +16,6 @@ import { LineSocialComponent } from '../../components/line-social/line-social.co
     FooterComponent,
     HeaderComponent,
     ProfileComponent,
-    LineSocialComponent,
     AboutComponent,
     SkillsComponent,
     ContactComponent,
