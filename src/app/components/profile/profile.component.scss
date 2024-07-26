@@ -163,7 +163,7 @@
   }
 
   .vector {
-    top: 10%;
+    top: 5%;
   }
 
   .content {
@@ -179,10 +179,10 @@
   }
 }
 
-@media only screen and (max-width: 1300px) {
+@media screen and (max-width: 1300px) {
   .content-left {
     img {
-      max-width: 250px;
+      max-width: 300px;
     }
   }
   .text {
@@ -190,7 +190,7 @@
   }
 }
 
-@media only screen and (max-width: 1100px) {
+@media screen and (max-width: 1100px) {
   .content {
     width: 100vw;
     padding-left: 50px;
@@ -227,10 +227,6 @@
     padding-right: 0;
   }
 
-  .content-row {
-    @include setFlex(column, center, center);
-  }
-
   .row {
     width: 100%;
     min-width: 20vw;
@@ -255,7 +251,32 @@
 @media only screen and (max-width: 700px) {
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1400px) and (orientation: portrait) {
+  .content-left {
+    img {
+      max-width: 45vw;
+      width: 45vw;
+    }
+  }
+
+  .content-row {
+    flex-direction: column;
+  }
+
+  .text {
+    font-size: 48px;
+  }
+
+  .iam {
+    max-width: 40px;
+  }
+
+  .vector {
+    top: 30%;
+  }
+}
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
   .content {
     padding-left: 25px;
     padding-right: 25px;
@@ -276,6 +297,57 @@
     padding-left: 0;
     width: 100%;
     img {
+      max-width: 70vw;
+      width: 70vw;
+      aspect-ratio: 6/9;
+      padding-left: 0;
+    }
+  }
+
+  .iam {
+    width: 100%;
+    max-width: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .text {
+    font-size: 20px;
+  }
+
+  .btn {
+    margin-top: 20px;
+  }
+
+  .vector {
+    min-height: 50vh;
+    max-height: 50vh;
+    top: 35%;
+  }
+}
+
+@media only screen and (max-width: 400px) and (orientation: portrait) {
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
+    background-position-y: 5%;
+  }
+
+  .line-content {
+    span {
+      display: none;
+    }
+
+    .line {
+      right: 77%;
+    }
+  }
+
+  .content-left {
+    padding-left: 0;
+    width: 100%;
+    img {
+      max-width: 60vw;
       width: 60vw;
       aspect-ratio: 6/9;
       padding-left: 0;
