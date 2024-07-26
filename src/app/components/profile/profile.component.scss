@@ -155,10 +155,18 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .content-left {
+    img {
+      max-width: 650px;
+    }
+  }
+}
+
 @media screen and (min-width: 1800px) {
   .content-left {
     img {
-      max-width: 400px;
+      max-width: 450px;
     }
   }
 
