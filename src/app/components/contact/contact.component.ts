@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, Input, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TranslateService } from '../../service/translate.service';
@@ -13,15 +13,37 @@ import { TranslateService } from '../../service/translate.service';
   styleUrl: './contact.component.scss',
 })
 export class ContactComponent implements OnInit {
+  http = inject(HttpClient);
+  checker = 0;
+  @Input() getData: any;
   constructor(
     private router: Router,
     public translateService: TranslateService
   ) {}
-  http = inject(HttpClient);
-  checker = 0;
+
   ngOnInit(): void {
+    const username = <HTMLInputElement>document.getElementById('username');
+    const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
+    const email = <HTMLInputElement>document.getElementById('email');
     const checkbox = <HTMLInputElement>document.getElementById('checkbox');
     const button = document.getElementById('button');
+    const english = document.getElementById('en');
+    const german = document.getElementById('de');
+
+    english?.addEventListener('click', (e) => {
+      this.setSuccess(username);
+      this.setSuccess(textarea);
+      this.setSuccess(email);
+      this.setSuccess(checkbox);
+    });
+
+    german?.addEventListener('click', (e) => {
+      this.setSuccess(username);
+      this.setSuccess(textarea);
+      this.setSuccess(email);
+      this.setSuccess(checkbox);
+    });
+
     checkbox.addEventListener('click', (e) => {
       if (checkbox.checked) {
         button?.classList.remove('inactive');
@@ -68,7 +90,10 @@ export class ContactComponent implements OnInit {
     const username = <HTMLInputElement>document.getElementById('username');
     const usernameValue = username.value.trim();
     if (usernameValue == '') {
-      this.setError(username, 'Username is required');
+      this.setError(
+        username,
+        this.translateService.getTranslation('contact.input1')
+      );
       this.checker = 0;
     } else {
       this.setSuccess(username);
@@ -80,7 +105,10 @@ export class ContactComponent implements OnInit {
     const textarea = <HTMLTextAreaElement>document.getElementById('textarea');
     const textareaValue = textarea.value.trim();
     if (textareaValue == '') {
-      this.setError(textarea, 'Message is required');
+      this.setError(
+        textarea,
+        this.translateService.getTranslation('contact.input4')
+      );
       this.checker = 0;
     } else {
       this.setSuccess(textarea);
@@ -92,10 +120,16 @@ export class ContactComponent implements OnInit {
     const email = <HTMLInputElement>document.getElementById('email');
     const emailValue = email.value.trim();
     if (emailValue == '') {
-      this.setError(email, 'Email is required');
+      this.setError(
+        email,
+        this.translateService.getTranslation('contact.input2')
+      );
       this.checker = 0;
     } else if (!this.isValidEmail(emailValue)) {
-      this.setError(email, 'Provide a valid email address');
+      this.setError(
+        email,
+        this.translateService.getTranslation('contact.input3')
+      );
       this.checker = 0;
     } else {
       this.setSuccess(email);
@@ -110,7 +144,10 @@ export class ContactComponent implements OnInit {
       this.setSuccess(checkbox);
       this.checker += 1;
     } else {
-      this.setError(checkbox, 'Please accept the privacy policy');
+      this.setError(
+        checkbox,
+        this.translateService.getTranslation('contact.input5')
+      );
       this.checker = 0;
     }
   }
@@ -121,7 +158,6 @@ export class ContactComponent implements OnInit {
     email: '',
     message: '',
   };
-
   post = {
     endPoint: 'https://hanbit-chang.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -141,11 +177,17 @@ export class ContactComponent implements OnInit {
           .subscribe({
             next: (response) => {
               ngForm.resetForm();
+              const checkbox = <HTMLInputElement>(
+                document.getElementById('checkbox')
+              );
+              const button = document.getElementById('button');
+              if (checkbox) checkbox.checked = false;
+              if (button) button.classList.add('inactive');
             },
             error: (error) => {
               console.error(error);
             },
-            complete: () => console.info('send post complete'),
+            complete: () => alert('send post complete'),
           });
       } catch (error) {
         console.error(error);
@@ -171,6 +213,8 @@ export class ContactComponent implements OnInit {
   }
 
   gotoPrivacyPolicy() {
-    this.router.navigate(['/policy']);
+    this.router.navigate(['/policy']).then(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    });
   }
 }

@@ -1,22 +1,28 @@
-<h1>Impressum</h1>
-
-<p>
-  Hanbit Chang<br />
-  Alexianergraben 40<br />
-  40<br />
-  52062 Aachen
-</p>
-
-<h2>Kontakt</h2>
-<p>
-  Telefon: 015774128843<br />
-  E-Mail: chanbit10&#64;gmail.com
-</p>
-
-<p>
-  Quelle:
-  <a href="https://www.e-recht24.de/impressum-generator.html"
-    >https://www.e-recht24.de/impressum-generator.html</a
-  >
-</p>
-<app-footer></app-footer>
+<div class="page-container">
+  <app-header></app-header>
+  <div class="container">
+    <div class="content">
+      <div class="column">
+        <h1>{{ translateService.getTranslation("imprint.title") }}</h1>
+        <p>
+          Hanbit Chang<br />
+          Alexianergraben<br />
+          40<br />
+          52062 Aachen
+        </p>
+        <h2>{{ translateService.getTranslation("imprint.contact.0") }}</h2>
+        <p>
+          {{ translateService.getTranslation("imprint.contact.1") }}<br />
+          E-Mail: chanbit10&#64;gmail.com
+        </p>
+        <p>
+          {{ translateService.getTranslation("imprint.quelle.0") }}
+          <a href="https://www.e-recht24.de/impressum-generator.html"
+            >https://www.e-recht24.de/impressum-generator.html</a
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+  <app-impressum-footer></app-impressum-footer>
+</div>

@@ -7,12 +7,13 @@ const texts = {
       nav4: 'Contact',
     },
     profile: {
-      button: 'Lets talk!',
+      button: "Let's talk!",
+      scroll: 'Scroll down',
     },
     about: {
       title: 'About Me',
       text1:
-        'I am a frontend developer based in Aachen, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in the world of frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
+        'I am a frontend developer based in Aachen, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
       text2:
         'I create innovative and user-friendly web solutions. My designs are both functional and engaging, ensuring efficiency and appeal.',
       text3:
@@ -55,7 +56,7 @@ const texts = {
       title: 'Contact',
       subtitle: 'Got a problem to solve?',
       text1:
-        'Contact me through this form, I am interested in hearing from you, knowing your ideas and contributing to your projects with my work.',
+        'Contact me through this form, I am interested in hearing from you, knowing your ideas, and contributing to your projects with my work.',
       text2: 'Need a Frontend developer? Contact me!',
       name: 'Your name',
       email: 'Your email',
@@ -65,6 +66,20 @@ const texts = {
       privacy1: "I've read the",
       privacy2: 'privacy policy',
       privacy3: 'and agree to the processing of my data as outlined',
+      input1: 'Username is required',
+      input2: 'Email is required',
+      input3: 'Provide a valid email address',
+      input4: 'Message is required',
+      input5: 'Please accept the privacy policy',
+    },
+    footer: {
+      imprint: 'Imprint',
+    },
+    imprint: {
+      title: 'Imprint',
+      info: ['Hanbit Chang', 'Alexianergraben', '40', '52062 Aachen'],
+      contact: ['Contact', 'Phone: 015774128843', 'Email: chanbit10@gmail.com'],
+      quelle: ['Source:', 'https://www.e-recht24.de/impressum-generator.html'],
     },
   },
   de: {
@@ -76,6 +91,7 @@ const texts = {
     },
     profile: {
       button: 'Lass uns reden!',
+      scroll: 'Nach unten scrollen',
     },
     about: {
       title: 'Über mich',
@@ -96,7 +112,7 @@ const texts = {
       title: 'Portfolio',
       text1:
         'Entdecken Sie hier eine Auswahl meiner Arbeiten - Interagieren Sie mit Projekten, um meine Fähigkeiten in Aktion zu sehen.',
-      button1: 'Live-Test',
+      button1: 'Live Test',
       button2: 'Github',
       portfolio1: {
         title: 'Join',
@@ -134,6 +150,24 @@ const texts = {
       privacy2: 'Datenschutzerklärung',
       privacy3:
         'gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu',
+      input1: 'Name ist erforderlich',
+      input2: 'E-Mail ist erforderlich',
+      input3: 'Bitte geben Sie eine gültige E-Mail-Adresse an',
+      input4: 'Nachricht ist erforderlich',
+      input5: 'Bitte akzeptieren Sie die Datenschutzrichtlinie',
+    },
+    footer: {
+      imprint: 'Impressum',
+    },
+    imprint: {
+      title: 'Impressum',
+      info: ['Hanbit Chang', 'Alexianergraben', '40', '52062 Aachen'],
+      contact: [
+        'Kontakt',
+        'Telefon: 015774128843',
+        'E-Mail: chanbit10@gmail.com',
+      ],
+      quelle: ['Quelle:', 'https://www.e-recht24.de/impressum-generator.html'],
     },
   },
 };

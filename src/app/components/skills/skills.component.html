@@ -1,6 +1,6 @@
 <div id="skills" class="container">
   <div class="content">
-    <div class="content-left">
+    <div class="content-left hidden">
       <div class="logo-container">
         <img src="./assets/img/icons/logos/angular.svg" alt="" />
         <img src="./assets/img/icons/logos/typescript.svg" alt="" />
@@ -28,19 +28,20 @@
         />
       </div>
     </div>
-    <div class="content-right">
-      <h1>{{ translateService.getTranslation("skills.title") }}</h1>
+    <div class="content-right hidden-right">
+      <div class="title-container">
+        <h1>{{ translateService.getTranslation("skills.title") }}</h1>
+        <div class="line"></div>
+      </div>
       <p>
         {{ translateService.getTranslation("skills.text1") }}
       </p>
-      <div class="btn">
-        <a href="#contact">{{
-          translateService.getTranslation("skills.button1")
-        }}</a>
-      </div>
+      <a href="#contact">
+        <div class="btn">
+          {{ translateService.getTranslation("skills.button1") }}
+        </div>
+      </a>
     </div>
   </div>
-  <div class="line-container">
-    <div class="line"></div>
-  </div>
+  <div class="line-container hidden-right"></div>
 </div>

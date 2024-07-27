@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { LineSocialComponent } from './line-social.component';
+import { ImpressumFooterComponent } from './impressum-footer.component';
 
-describe('LineSocialComponent', () => {
-  let component: LineSocialComponent;
-  let fixture: ComponentFixture<LineSocialComponent>;
+describe('ImpressumFooterComponent', () => {
+  let component: ImpressumFooterComponent;
+  let fixture: ComponentFixture<ImpressumFooterComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [LineSocialComponent]
+      imports: [ImpressumFooterComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(LineSocialComponent);
+    fixture = TestBed.createComponent(ImpressumFooterComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

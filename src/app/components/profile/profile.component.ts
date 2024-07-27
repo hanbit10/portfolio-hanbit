@@ -8,7 +8,7 @@ import { AnimateService } from '../../service/animate.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
+  styleUrls: ['./profile.component.scss', './profile.component2.scss'],
 })
 export class ProfileComponent implements OnInit {
   constructor(
@@ -16,25 +16,8 @@ export class ProfileComponent implements OnInit {
     public animateService: AnimateService
   ) {}
   ngOnInit(): void {
-    // const startAnimation = (entries: any) => {
-    //   entries.forEach((entry: any) => {
-    //     console.log(entry);
-    //     if (entry.isIntersecting) {
-    //       entry.target.classList.add('show');
-    //     } else {
-    //       entry.target.classList.remove('show');
-    //     }
-    //   });
-    // };
-    // const observer = new IntersectionObserver(startAnimation);
-    // const elements = document.querySelectorAll('.hidden');
-    // if (elements) {
-    //   elements.forEach((el) => observer.observe(el));
-    // }
-
     const elements = document.querySelectorAll('.hidden');
     if (elements) {
-      // this.animateService.direction = 'right';
       elements.forEach((el) => this.animateService.observer.observe(el));
     }
     const rightElements = document.querySelectorAll('.hidden-right');

@@ -1,47 +1,40 @@
 @import "./../../../styles.scss";
 
 .container {
-  min-height: 80vh;
-  padding-top: 15vh;
   position: relative;
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: 1fr auto 1fr;
+  @include setFlex(row, center, flex-start);
   background-image: url("./../../../assets/img/shapes/shape8.svg");
   background-repeat: no-repeat;
   background-size: 35%;
   background-position-y: 300px;
-}
-
-.content {
-  position: relative;
-  width: 100%;
-  max-width: 1440px;
-  @include setFlex(row, center, flex-start);
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  overflow: hidden;
 }
 
 .title-container {
   height: 100px;
-  @include setFlex(row, flex-start, center);
-  padding-left: 50px;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 2;
-  grid-column-end: 3;
+  width: 100%;
+  @include setFlex(row, center, flex-start);
 }
 
-.line-container {
+.content {
+  margin-top: 15vh;
+  position: relative;
   width: 100%;
-  height: 100px;
-  @include setFlex(row, flex-end, center);
-  grid-row-start: 1;
-  grid-row-end: 2;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  max-width: 1440px;
+  @include setFlex(row, center, flex-start);
+  padding-left: 100px;
+  padding-right: 100px;
+  margin-bottom: 10vh;
+}
+
+.title-content {
+  margin-top: 10vh;
+  position: relative;
+  width: 100%;
+  max-width: 1440px;
+  @include setFlex(row, flex-start, center);
+  padding-left: 100px;
+  padding-right: 100px;
 }
 
 .link {
@@ -59,14 +52,16 @@
 }
 
 .line {
-  width: 100%;
+  position: absolute;
+  right: 95%;
+  width: 100vw;
   height: 4px;
   background-color: $neon-purple;
 }
 
 .content-left {
   width: 40%;
-  margin-right: 10px;
+  margin-right: 150px;
   h3 {
     color: white;
   }
@@ -74,7 +69,6 @@
 
 .content-right {
   width: 50%;
-
   form {
     @include setFlex(column, center, center);
     width: 100%;
@@ -89,9 +83,9 @@
       &:hover {
         transform: scale(1.1);
         background-color: $neon-purple;
-        transition: 0.3s ease-in-out;
+        transition: 0.15s ease-in-out;
       }
-      transition: 0.3s ease-in-out;
+      transition: 0.15s ease-in-out;
       cursor: pointer;
     }
 
@@ -146,13 +140,20 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  input:-webkit-autofill,
+  input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+  }
+  input[data-autocompleted] {
+    background-color: transparent !important;
+  }
   input {
     all: unset;
     border: 2px solid $neon-purple;
     border-radius: 10px;
     display: block;
     font-size: 16px;
-    padding: 15px;
+    padding: 10px;
     width: 90%;
 
     &:focus {
@@ -173,9 +174,9 @@
   textarea {
     all: unset;
     width: 90%;
-    height: 200px;
+    height: 150px;
     border-radius: 10px;
-    padding: 15px;
+    padding: 10px;
     border: 2px solid $neon-purple;
 
     &:focus {
@@ -222,6 +223,7 @@
 .checkbox-container {
   @include setFlex(row, flex-start, center);
   width: 100%;
+  margin-right: 20px;
   p {
     font-size: 14px;
     margin: 0;
@@ -249,20 +251,29 @@
   .container {
     height: fit-content;
     grid-template-rows: auto auto;
+    padding-top: 0;
   }
 
   .title-container {
-    max-width: 80vw;
     padding-left: 0;
   }
+
+  .title-content {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
   .content {
+    margin-top: 10vh;
     @include setFlex(column, center, center);
-    max-width: 90vw;
     height: fit-content;
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .content-left {
     width: 100%;
+    margin-right: 0;
   }
 
   .content-right {
@@ -271,5 +282,17 @@
 
   .line {
     margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title-content {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
   }
 }

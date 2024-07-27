@@ -1,133 +1,116 @@
-<div id="portfolios" class="container">
-  <section class="title-section">
-    <div class="line-container1">
+<div id="portfolios" class="title-container">
+  <section class="title-section hidden-right">
+    <div class="title-box">
       <div class="line1"></div>
-    </div>
-    <div class="title-container">
-      <div class="line3"></div>
       <h1>{{ translateService.getTranslation("portfolio.title") }}</h1>
-      <div class="line3"></div>
-    </div>
-    <div class="title-text">
-      <p>
-        {{ translateService.getTranslation("portfolio.text1") }}
-      </p>
-    </div>
-    <div class="line-container2">
       <div class="line2"></div>
     </div>
   </section>
-  <div class="content">
-    <div class="portfolio" id="1">
-      <div class="img-container">
-        <img
-          class="portfolio-img"
-          src="./assets/img/portfolios/join.svg"
-          alt=""
-        />
-      </div>
-      <div class="portfolio-info">
-        <h3>Join</h3>
-        <h4>Angular | TypeScript | HTML | CSS | Firebase</h4>
-        <p>
-          {{ translateService.getTranslation("portfolio.portfolio1.text") }}
-        </p>
-        <div class="btn-container">
-          <div class="btn purple">
-            <a href="https://join-187.developerakademie.net/login.html">{{
-              translateService.getTranslation("portfolio.button1")
-            }}</a>
-          </div>
-          <div class="btn transparent">
-            <a href="https://github.com/hanbit10/Join" target="_blank"
-              >Github</a
+</div>
+<section class="text-section">
+  <div class="title-text hidden-right">
+    <p>
+      {{ translateService.getTranslation("portfolio.text1") }}
+    </p>
+  </div>
+</section>
+<section class="container">
+  <div class="secure">
+    <div class="content">
+      <div class="portfolio hidden-right" id="1">
+        <div class="img-container">
+          <img
+            class="portfolio-img"
+            src="./assets/img/portfolios/join.svg"
+            alt=""
+          />
+        </div>
+        <div class="portfolio-info">
+          <h3>Join</h3>
+          <h4>Angular | TypeScript | HTML | CSS | Firebase</h4>
+          <p>
+            {{ translateService.getTranslation("portfolio.portfolio1.text") }}
+          </p>
+          <div class="btn-container">
+            <a
+              href="https://join-187.developerakademie.net/login.html"
+              target="_blank"
+            >
+              <div class="btn purple">
+                {{ translateService.getTranslation("portfolio.button1") }}
+              </div></a
+            >
+            <a href="https://github.com/hanbit10/Join" target="_blank">
+              <div class="btn transparent">Github</div></a
             >
           </div>
         </div>
       </div>
-    </div>
-    <div class="portfolio" id="2">
-      <div class="img-container">
-        <img
-          class="portfolio-img"
-          src="./assets/img/portfolios/el-polo-loco.svg"
-          alt=""
-        />
-      </div>
-      <div class="portfolio-info">
-        <h3 id="title">El Polo Loco</h3>
-        <h4 id="skills">JavaScript | HTML | CSS</h4>
-        <p id="description">
-          {{ translateService.getTranslation("portfolio.portfolio2.text") }}
-        </p>
-        <div class="btn-container">
-          <div class="btn purple">
+      <div class="portfolio hidden" id="2">
+        <div class="img-container">
+          <img
+            class="portfolio-img"
+            src="./assets/img/portfolios/el-polo-loco.svg"
+            alt=""
+          />
+        </div>
+        <div class="portfolio-info">
+          <h3 id="title">El Polo Loco</h3>
+          <h4 id="skills">JavaScript | HTML | CSS</h4>
+          <p id="description">
+            {{ translateService.getTranslation("portfolio.portfolio2.text") }}
+          </p>
+          <div class="btn-container">
             <a
               href="https://hanbit-chang.developerakademie.net/el-pollo-loco/src/index.html"
+              target="_blank"
             >
-              {{ translateService.getTranslation("portfolio.button1") }}
+              <div class="btn purple">
+                {{ translateService.getTranslation("portfolio.button1") }}
+              </div>
             </a>
-          </div>
-          <div class="btn transparent">
+
             <a
               href="https://github.com/hanbit10/DeveloperAkademie-El-Pollo-Loco"
+              target="_blank"
             >
-              Github</a
+              <div class="btn transparent">Github</div></a
             >
           </div>
         </div>
       </div>
-    </div>
-    <div class="portfolio" id="3">
-      <div class="img-container">
-        <img
-          class="portfolio-img"
-          src="./assets/img/portfolios/simple.svg"
-          alt=""
-        />
-      </div>
-      <div class="portfolio-info">
-        <h3>Simple CRM</h3>
-        <h4>Angular | Firebase</h4>
-        <p>
-          {{ translateService.getTranslation("portfolio.portfolio3.text") }}
-        </p>
-        <div class="btn-container">
-          <div class="btn purple">
-            {{ translateService.getTranslation("portfolio.button1") }}
-          </div>
-          <div class="btn transparent">Github</div>
+      <div class="portfolio hidden" id="3">
+        <div class="img-container">
+          <img
+            class="portfolio-img"
+            src="./assets/img/portfolios/pokedex.svg"
+            alt=""
+          />
         </div>
-      </div>
-    </div>
-    <div class="portfolio" id="4">
-      <div class="img-container">
-        <img
-          class="portfolio-img"
-          src="./assets/img/portfolios/pokedex.svg"
-          alt=""
-        />
-      </div>
-      <div class="portfolio-info">
-        <h3 id="title">Pokédex</h3>
-        <h4 id="skills">JavaScript | HTML | CSS | API</h4>
-        <p id="description">
-          {{ translateService.getTranslation("portfolio.portfolio4.text") }}
-        </p>
-        <div class="btn-container">
-          <div class="btn purple">
+        <div class="portfolio-info">
+          <h3 id="title">Pokédex</h3>
+          <h4 id="skills">JavaScript | HTML | CSS | API</h4>
+          <p id="description">
+            {{ translateService.getTranslation("portfolio.portfolio4.text") }}
+          </p>
+          <div class="btn-container">
             <a
               href="https://hanbit-chang.developerakademie.net/pokedex/index.html"
-              >{{ translateService.getTranslation("portfolio.button1") }}</a
+              target="_blank"
             >
-          </div>
-          <div class="btn transparent">
-            <a href="https://github.com/hanbit10/DeveloperAkademie-Pokedex"
-              >Github</a
+              <div class="btn purple">
+                {{ translateService.getTranslation("portfolio.button1") }}
+              </div>
+            </a>
+            <a
+              href="https://github.com/hanbit10/DeveloperAkademie-Pokedex"
+              target="_blank"
+            >
+              <div class="btn transparent">Github</div></a
             >
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>

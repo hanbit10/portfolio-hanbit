@@ -9,7 +9,6 @@ export class AnimateService implements OnInit {
 
   startAnimation(entries: any) {
     entries.forEach((entry: any) => {
-      console.log(entry);
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       } else {

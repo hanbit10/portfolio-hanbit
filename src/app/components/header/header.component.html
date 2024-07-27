@@ -1,8 +1,8 @@
-<div class="container">
+<div id="header" class="container">
   <div class="content">
     <div class="container-left">
       <div class="logo-container">
-        <a href="#profile">
+        <a href="#" (click)="gotoHeader()">
           <div class="logo green">H</div>
           <div class="logo">a</div>
           <div class="logo">n</div>
@@ -23,8 +23,8 @@
         <a href="#portfolios">
           {{ translateService.getTranslation("header.nav3") }}</a
         >
-        <div class="language" (click)="changeLanguage('en')">EN</div>
-        <div class="language" (click)="changeLanguage('de')">DE</div>
+        <div id="en" class="language" (click)="changeLanguage('en')">EN</div>
+        <div id="de" class="language" (click)="changeLanguage('de')">DE</div>
       </div>
       <div class="burger-nav">
         <label class="hamburger-menu">

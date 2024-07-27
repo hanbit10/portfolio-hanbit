@@ -2,10 +2,12 @@
 
 .container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   @include setFlex(row, center, center);
   height: 150px;
   border-top: 4px solid $neon-green;
+  background-color: $background-color;
+  z-index: 10;
 }
 
 .content {
@@ -14,6 +16,7 @@
   @include setFlex(row, space-between, center);
   padding-left: 100px;
   padding-right: 100px;
+  z-index: 10;
 }
 
 .container-left {
@@ -80,16 +83,15 @@
 
 @media screen and (max-width: 1100px) {
   .container {
-    padding-left: 10px;
-    padding-right: 10px;
     flex-direction: column;
     height: fit-content;
+    position: relative;
   }
 
   .content {
     flex-direction: column;
-    padding-left: 50px;
-    padding-right: 50px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .mobile {
@@ -98,5 +100,11 @@
 
   .desktop {
     display: none;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    position: relative;
   }
 }

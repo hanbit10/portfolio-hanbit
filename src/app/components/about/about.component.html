@@ -1,23 +1,7 @@
-<div id="about" class="container">
-  <div class="line-container">
-    <div class="line"></div>
-  </div>
-  <div class="line-content">
-    <section class="social-network">
-      <a href="https://github.com/hanbit10" target="_blank">
-        <img src="./assets/img/buttons/github-button.svg" alt="github" />
-      </a>
-      <a href="#contact">
-        <img src="./assets/img/buttons/mail-button.svg" alt="mail" />
-      </a>
-      <a href="https://www.linkedin.com/in/hanbitchang/" target="_blank">
-        <img src="./assets/img/buttons/linked-button.svg" alt="linkedin" />
-      </a>
-    </section>
-    <span>chanbit10&#64;gmail.com</span>
-  </div>
+<div class="container">
+  <div id="about" class="about-title"></div>
   <div class="content">
-    <div class="content-left">
+    <div class="content-left hidden">
       <h1>{{ translateService.getTranslation("about.title") }}</h1>
       <p>
         {{ translateService.getTranslation("about.text1") }}
@@ -36,11 +20,9 @@
         </div>
       </div>
     </div>
-    <div class="content-right">
+    <div class="content-right hidden-right">
       <div class="profile-img"></div>
+      <div class="profile-line"></div>
     </div>
-  </div>
-  <div class="profile-line-container">
-    <div class="profile-line"></div>
   </div>
 </div>

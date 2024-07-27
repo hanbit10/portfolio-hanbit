@@ -1,6 +1,6 @@
 @import "./../../../styles.scss";
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: portrait) {
   .container {
     @include setFlex(row, center, flex-start);
     width: 100%;
@@ -17,8 +17,9 @@
     min-height: 90vh;
     background-image: url("./../../../assets/img/shapes/shape-profile.svg");
     background-repeat: no-repeat;
-    background-size: 40%;
-    background-position-y: 60%;
+    background-size: 50%;
+    background-position-x: 50%;
+    background-position-y: 40%;
     @include setFlex(row, center, center);
   }
 
@@ -31,7 +32,7 @@
     @include setFlex(column, center, center);
     img {
       width: 100%;
-      max-width: 350px;
+      max-width: 35vw;
       aspect-ratio: 6/9;
     }
   }
@@ -113,11 +114,10 @@
   .row {
     @include setFlex(row, center, center);
     width: 100%;
-    min-width: 550px;
   }
 
   .content-row {
-    @include setFlex(row, center, center);
+    @include setFlex(column, center, center);
     width: 100%;
   }
 
@@ -135,9 +135,9 @@
 
   .vector {
     position: absolute;
-    width: 100vw;
-    height: 60vh;
-    top: 40vh;
+    width: 100%;
+    min-height: 50vh;
+    top: 35%;
     left: 0;
   }
 
@@ -157,82 +157,38 @@
   }
 }
 
-@media screen and (min-width: 2000px) and (orientation: landscape) {
+@media only screen and (max-width: 1100px) and (orientation: portrait) {
   .content-left {
     img {
-      max-width: 500px;
-    }
-  }
-}
-
-@media screen and (min-width: 1800px) and (max-width: 2000px) and (orientation: landscape) {
-  .content-left {
-    img {
-      max-width: 450px;
+      max-width: 35vw;
+      width: 35vw;
     }
   }
 
   .content {
-    background-position-y: 25%;
-  }
-}
-
-@media only screen and (min-width: 1600px) and (max-width: 1800px) and (orientation: landscape) {
-  .content-left {
-    img {
-      max-width: 400px;
-    }
-  }
-}
-
-@media screen and (max-width: 1300px) and (orientation: landscape) {
-  .content-left {
-    img {
-      max-width: 250px;
-    }
-  }
-  .text {
-    font-size: 42px;
-  }
-}
-
-@media screen and (max-width: 1100px) and (orientation: landscape) {
-  .content {
-    width: 100vw;
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .line-content {
-    .line {
-      right: 90%;
-    }
-  }
-
-  .iam {
-    width: 100%;
-    max-width: 30px;
-    padding-left: 8px;
-    padding-right: 8px;
-  }
-
-  .content-right {
-    width: 100%;
-    padding-right: 0;
-  }
-
-  .row {
-    width: 100%;
-    min-width: 20vw;
+  .content-row {
+    flex-direction: column;
   }
 
   .text {
-    font-size: 24px;
+    font-size: 32px;
+  }
+
+  .iam {
+    max-width: 40px;
   }
 
   .line-content {
     span {
       display: none;
+    }
+
+    .line {
+      right: 98vw;
     }
   }
 
@@ -241,13 +197,28 @@
   }
 }
 
-@media screen and (max-width: 600px) and (orientation: landscape) {
-  .content {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   .text {
-    font-size: 20px;
+    font-size: 28px;
+  }
+}
+
+@media only screen and (max-width: 480px) and (orientation: portrait) {
+  .content {
+    padding-left: 25px;
+    padding-right: 25px;
+    background-position-x: 50%;
+    background-position-y: 25%;
+  }
+
+  .line-content {
+    span {
+      display: none;
+    }
+
+    .line {
+      right: 80%;
+    }
   }
 
   .social-network {
@@ -259,36 +230,55 @@
   }
 
   .iam {
+    width: 100%;
     max-width: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .text {
+    font-size: 20px;
   }
 
   .btn {
-    margin-top: 10px;
+    margin-top: 20px;
+  }
+
+  .vector {
+    min-height: 50vh;
+    max-height: 50vh;
+    top: 35%;
   }
 }
 
-@media screen and (max-height: 650px) and (orientation: landscape) {
-  .content {
-    background-size: 20%;
-    background-position-x: 5%;
-    background-position-y: 50%;
+@media only screen and (max-height: 800px) and (orientation: portrait) {
+  .iam {
+    width: 30px;
   }
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-height: 660px) and (orientation: portrait) {
   .content-left {
     img {
-      max-width: 250px;
+      max-width: 80%;
+    }
+  }
+
+  .line-content {
+    margin-top: 20px;
+  }
+
+  .social-network {
+    img {
+      padding: 10px;
     }
   }
 
   .btn {
     font-size: 18px;
     height: 40px;
-  }
-}
-
-@media screen and (max-height: 400px) and (orientation: landscape) {
-  .content-left {
-    img {
-      max-width: 180px;
-    }
   }
 }
