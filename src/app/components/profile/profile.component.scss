@@ -201,8 +201,6 @@
     width: 100vw;
     padding-left: 50px;
     padding-right: 50px;
-    background-position-x: 50%;
-    background-position-y: 10%;
   }
 
   .line-content {
@@ -244,6 +242,10 @@
 }
 
 @media screen and (max-width: 600px) and (orientation: landscape) {
+  .content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
   .text {
     font-size: 20px;
   }
@@ -256,12 +258,16 @@
     }
   }
 
+  .iam {
+    max-width: 20px;
+  }
+
   .btn {
     margin-top: 10px;
   }
 }
 
-@media screen and (max-height: 600px) and (orientation: landscape) {
+@media screen and (max-height: 650px) and (orientation: landscape) {
   .content {
     background-size: 20%;
     background-position-x: 5%;
@@ -270,6 +276,19 @@
   .content-left {
     img {
       max-width: 250px;
+    }
+  }
+
+  .btn {
+    font-size: 18px;
+    height: 40px;
+  }
+}
+
+@media screen and (max-height: 400px) and (orientation: landscape) {
+  .content-left {
+    img {
+      max-width: 180px;
     }
   }
 }
@@ -291,8 +310,9 @@
     min-height: 90vh;
     background-image: url("./../../../assets/img/shapes/shape-profile.svg");
     background-repeat: no-repeat;
-    background-size: 40%;
-    background-position-y: 60%;
+    background-size: 50%;
+    background-position-x: 50%;
+    background-position-y: 40%;
     @include setFlex(row, center, center);
   }
 
@@ -410,7 +430,7 @@
     position: absolute;
     width: 100%;
     min-height: 50vh;
-    top: 30%;
+    top: 35%;
     left: 0;
   }
 
@@ -459,6 +479,10 @@
     span {
       display: none;
     }
+
+    .line {
+      right: 98vw;
+    }
   }
 
   .scrolldown {
@@ -486,7 +510,7 @@
     }
 
     .line {
-      right: 77%;
+      right: 80%;
     }
   }
 
@@ -520,10 +544,34 @@
   }
 }
 
-// @media only screen and (max-height: 850px) and (orientation: portrait) {
-//   .content-left {
-//     img {
-//       max-width: 70%;
-//     }
-//   }
-// }
+@media only screen and (max-height: 800px) and (orientation: portrait) {
+  .iam {
+    width: 30px;
+  }
+  .btn {
+    margin-top: 20px;
+  }
+}
+
+@media only screen and (max-height: 660px) and (orientation: portrait) {
+  .content-left {
+    img {
+      max-width: 80%;
+    }
+  }
+
+  .line-content {
+    margin-top: 20px;
+  }
+
+  .social-network {
+    img {
+      padding: 10px;
+    }
+  }
+
+  .btn {
+    font-size: 18px;
+    height: 40px;
+  }
+}

@@ -97,9 +97,10 @@
   $bar-width: 40px;
   $bar-height: 2px;
   $hamburger-gap: 16px;
+  $hamburger-margin: 4vw;
   $foreground: #868686;
   $background: white;
-  $hamburger-margin: 12px;
+
   $animation-timing: 200ms ease-in-out;
   $hamburger-height: calc($bar-height * 3 + $hamburger-gap * 2);
   $x-width: calc($hamburger-height * 1.41421356237);
@@ -206,9 +207,22 @@
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-height: 500px) {
   .content {
     padding-right: 25px;
     padding-left: 25px;
+  }
+
+  .hamburger-menu::before,
+  .hamburger-menu::after,
+  .hamburger-menu input {
+    content: "";
+    width: 20px;
+  }
+
+  .hamburger-menu {
+    gap: 8px;
+    top: 2vw;
+    right: 2vw;
   }
 }
