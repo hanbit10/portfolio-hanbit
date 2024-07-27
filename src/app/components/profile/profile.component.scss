@@ -135,9 +135,9 @@
 
   .vector {
     position: absolute;
-    width: 100%;
-    min-height: 50vh;
-    top: 15%;
+    width: 100vw;
+    height: 60vh;
+    top: 40vh;
     left: 0;
   }
 
@@ -163,10 +163,6 @@
       max-width: 500px;
     }
   }
-
-  .vector {
-    top: 10%;
-  }
 }
 
 @media screen and (min-width: 1800px) and (max-width: 2000px) and (orientation: landscape) {
@@ -186,10 +182,6 @@
     img {
       max-width: 400px;
     }
-  }
-
-  .vector {
-    top: 5%;
   }
 }
 
@@ -236,12 +228,6 @@
     min-width: 20vw;
   }
 
-  .vector {
-    width: 100%;
-    min-height: 40vh;
-    top: 25%;
-  }
-
   .text {
     font-size: 24px;
   }
@@ -260,6 +246,31 @@
 @media screen and (max-width: 600px) and (orientation: landscape) {
   .text {
     font-size: 20px;
+  }
+
+  .social-network {
+    img {
+      padding: 10px;
+      width: 25px;
+      height: 25px;
+    }
+  }
+
+  .btn {
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-height: 600px) and (orientation: landscape) {
+  .content {
+    background-size: 20%;
+    background-position-x: 5%;
+    background-position-y: 50%;
+  }
+  .content-left {
+    img {
+      max-width: 250px;
+    }
   }
 }
 
@@ -294,7 +305,7 @@
     @include setFlex(column, center, center);
     img {
       width: 100%;
-      max-width: 40vw;
+      max-width: 35vw;
       aspect-ratio: 6/9;
     }
   }
@@ -422,8 +433,8 @@
 @media only screen and (max-width: 1100px) and (orientation: portrait) {
   .content-left {
     img {
-      max-width: 45vw;
-      width: 45vw;
+      max-width: 35vw;
+      width: 35vw;
     }
   }
 
@@ -455,6 +466,12 @@
   }
 }
 
+@media only screen and (max-width: 768px) and (orientation: portrait) {
+  .text {
+    font-size: 28px;
+  }
+}
+
 @media only screen and (max-width: 480px) and (orientation: portrait) {
   .content {
     padding-left: 25px;
@@ -470,6 +487,14 @@
 
     .line {
       right: 77%;
+    }
+  }
+
+  .social-network {
+    img {
+      padding: 10px;
+      width: 25px;
+      height: 25px;
     }
   }
 
@@ -495,10 +520,10 @@
   }
 }
 
-@media only screen and (max-height: 850px) and (orientation: portrait) {
-  .content-left {
-    img {
-      max-width: 80%;
-    }
-  }
-}
+// @media only screen and (max-height: 850px) and (orientation: portrait) {
+//   .content-left {
+//     img {
+//       max-width: 70%;
+//     }
+//   }
+// }
