@@ -8,7 +8,7 @@ import { AnimateService } from '../../service/animate.service';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './profile.component.html',
-  styleUrl: './profile.component.scss',
+  styleUrls: ['./profile.component.scss', './profile.component2.scss'],
 })
 export class ProfileComponent implements OnInit {
   constructor(
