@@ -159,7 +159,7 @@ export class ContactComponent implements OnInit {
     message: '',
   };
   post = {
-    endPoint: 'https://hanbit-chang.com/sendMail.php',
+    endPoint: 'https://hanbit-chang.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
