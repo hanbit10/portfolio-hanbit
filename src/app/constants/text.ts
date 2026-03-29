@@ -42,9 +42,9 @@ const texts = {
         text: 'Jump and Run Game with object-oriented approach. Help Pepe find coins and throw Tabasco bottles to fight against the crazy chicken.',
       },
       portfolio3: {
-        title: 'Simple CRM',
+        title: 'DaBubble',
         skills: 'Angular | Firebase',
-        text: 'A very Simple Customer Relationship Management system working with CRUD functionality.',
+        text: 'Real-time chat platform (similar to Slack) with channel-based communication and direct messaging, including the implementation of an API for managing messages and user profiles.',
       },
       portfolio4: {
         title: 'Pokédex',
@@ -125,9 +125,9 @@ const texts = {
         text: 'Jump and Run-Spiel mit objektorientiertem Ansatz. Helfen Sie Pepe, Münzen zu finden und Tabasco-Flaschen zu werfen, um gegen das verrückte Huhn zu kämpfen.',
       },
       portfolio3: {
-        title: 'Simple CRM',
+        title: 'DaBubble',
         skills: 'Angular | Firebase',
-        text: 'Ein sehr einfaches Customer Relationship Management System mit CRUD-Funktionalität.',
+        text: 'Echtzeit-Chat-Plattform (ähnlich Slack) mit Channel-Logik und Direktnachrichten sowie Implementierung einer API zur Verwaltung von Nachrichten und Benutzerprofilen.',
       },
       portfolio4: {
         title: 'Pokédex',
