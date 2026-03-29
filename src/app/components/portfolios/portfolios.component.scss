@@ -79,8 +79,8 @@
 
 .portfolio-img {
   width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1/1;
+  max-width: 300px;
+  aspect-ratio: 4/3;
 }
 
 .secure {
@@ -109,6 +109,8 @@
 }
 
 .img-container {
+  margin-top: 100px;
+  margin-bottom: 100px;
   width: 100%;
   max-width: 600px;
   height: fit-content;
