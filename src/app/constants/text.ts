@@ -51,6 +51,11 @@ const texts = {
         skills: 'JavaScript | HTML | CSS | API',
         text: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
       },
+      portfolio5: {
+        title: 'Everycent',
+        skills: 'Angular | TypeScript | HTML | CSS | MongoDB',
+        text: 'E-commerce platform built on the MEAN stack, featuring CRUD functionality for listing registration and management.',
+      },
     },
     contact: {
       title: 'Contact',
@@ -133,6 +138,11 @@ const texts = {
         title: 'Pokédex',
         skills: 'JavaScript | HTML | CSS | API',
         text: 'Basierend auf der PokéAPI, eine einfache Bibliothek, die Pokémon-Informationen bereitstellt und katalogisiert.',
+      },
+      portfolio5: {
+        title: 'Everycent',
+        skills: 'Angular | Typescript | HTML | CSS | MongoDB',
+        text: 'E-Commerce-Plattform auf Basis des MEAN-Stacks mit einer CRUD-Funktionalität zur Registrierung und Bearbeitung von Inseraten.',
       },
     },
     contact: {
