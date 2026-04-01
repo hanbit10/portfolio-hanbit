@@ -13,7 +13,7 @@ const texts = {
     about: {
       title: 'About Me',
       text1:
-        'I am a frontend developer based in Aachen, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
+        'I am a frontend developer based in Cologne, with a degree in Informatics from RWTH Aachen University and a completed bootcamp from Developer Akademie. I thrive in frontend development, focusing on creating intuitive and engaging user interfaces. I am passionate about continuous learning and staying updated with the latest industry trends.',
       text2:
         'I create innovative and user-friendly web solutions. My designs are both functional and engaging, ensuring efficiency and appeal.',
       text3:
@@ -101,7 +101,7 @@ const texts = {
     about: {
       title: 'Über mich',
       text1:
-        'Ich bin ein Frontend-Entwickler aus Aachen mit einem Abschluss in Informatik der RWTH Aachen und einem abgeschlossenen Bootcamp von der Developer Akademie. Ich blühe in der Welt der Frontend-Entwicklung auf und konzentriere mich auf die Erstellung intuitiver und ansprechender Benutzeroberflächen. Ich bin leidenschaftlich daran interessiert, kontinuierlich zu lernen und mich über die neuesten Branchentrends auf dem Laufenden zu halten.',
+        'Ich bin ein Frontend-Entwickler aus Köln mit einem Abschluss in Informatik der RWTH Aachen und einem abgeschlossenen Bootcamp von der Developer Akademie. Ich blühe in der Welt der Frontend-Entwicklung auf und konzentriere mich auf die Erstellung intuitiver und ansprechender Benutzeroberflächen. Ich bin leidenschaftlich daran interessiert, kontinuierlich zu lernen und mich über die neuesten Branchentrends auf dem Laufenden zu halten.',
       text2:
         'Ich erstelle innovative und benutzerfreundliche Weblösungen. Meine Designs sind sowohl funktional als auch ansprechend und sorgen für Effizienz und Attraktivität.',
       text3:
