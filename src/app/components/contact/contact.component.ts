@@ -170,31 +170,38 @@ export class ContactComponent implements OnInit {
   };
   onSubmit(ngForm: NgForm) {
     this.validateInputs();
+
     if (this.formValidate(ngForm)) {
-      try {
-        console.log('checking contactData', this.contactData);
-        this.http
-          .post(this.post.endPoint, this.post.body(this.contactData))
-          .subscribe({
-            next: (response) => {
-              ngForm.resetForm();
-              const checkbox = <HTMLInputElement>(
-                document.getElementById('checkbox')
-              );
-              const button = document.getElementById('button');
-              if (checkbox) checkbox.checked = false;
-              if (button) button.classList.add('inactive');
-            },
-            error: (error) => {
-              console.error(error);
-            },
-            complete: () => alert('send post complete'),
-          });
-      } catch (error) {
-        console.error(error);
-      }
-    } else if (this.formInvalidate(ngForm)) {
-      ngForm.resetForm();
+      // CRITICAL: Map your DOM values to the contactData object so they aren't null!
+      this.contactData.name = (<HTMLInputElement>(
+        document.getElementById('username')
+      )).value;
+      this.contactData.email = (<HTMLInputElement>(
+        document.getElementById('email')
+      )).value;
+      this.contactData.message = (<HTMLTextAreaElement>(
+        document.getElementById('textarea')
+      )).value;
+
+      console.log('Sending valid payload:', this.contactData);
+
+      // Simplify the post request. Let Angular natively handle JSON content types.
+      this.http
+        .post(this.post.endPoint, this.contactData, { responseType: 'text' })
+        .subscribe({
+          next: (response) => {
+            console.log('Server response:', response);
+            ngForm.resetForm();
+            const checkbox = <HTMLInputElement>(
+              document.getElementById('checkbox')
+            );
+            const button = document.getElementById('button');
+            if (checkbox) checkbox.checked = false;
+            if (button) button.classList.add('inactive');
+          },
+          error: (error) => console.error('Network Error:', error),
+          complete: () => alert('Post request completed.'),
+        });
     }
   }
 
