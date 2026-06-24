@@ -172,25 +172,34 @@ export class ContactComponent implements OnInit {
     this.validateInputs();
 
     if (this.formValidate(ngForm)) {
-      // CRITICAL: Map your DOM values to the contactData object so they aren't null!
+      // 1. Manually pull the values from your HTML inputs right before sending
       this.contactData.name = (<HTMLInputElement>(
         document.getElementById('username')
-      )).value;
+      )).value.trim();
       this.contactData.email = (<HTMLInputElement>(
         document.getElementById('email')
-      )).value;
+      )).value.trim();
       this.contactData.message = (<HTMLTextAreaElement>(
         document.getElementById('textarea')
-      )).value;
+      )).value.trim();
 
       console.log('Sending valid payload:', this.contactData);
 
-      // Simplify the post request. Let Angular natively handle JSON content types.
+      // 2. Fire the clean post command directly to your backend
       this.http
-        .post(this.post.endPoint, this.contactData, { responseType: 'text' })
+        .post(
+          'https://hanbit-chang.onrender.com/sendMail.php',
+          this.contactData, // Do NOT use JSON.stringify() here! Pass the object directly.
+          { responseType: 'text' }, // Forces Angular to accept standard text back from PHP
+        )
         .subscribe({
           next: (response) => {
             console.log('Server response:', response);
+            alert(
+              'Email status check complete. Look at the console log above!',
+            );
+
+            // Reset fields
             ngForm.resetForm();
             const checkbox = <HTMLInputElement>(
               document.getElementById('checkbox')
@@ -199,9 +208,12 @@ export class ContactComponent implements OnInit {
             if (checkbox) checkbox.checked = false;
             if (button) button.classList.add('inactive');
           },
-          error: (error) => console.error('Network Error:', error),
-          complete: () => alert('Post request completed.'),
+          error: (error) => {
+            console.error('Network Connection Error:', error);
+          },
         });
+    } else if (this.formInvalidate(ngForm)) {
+      ngForm.resetForm();
     }
   }
 
