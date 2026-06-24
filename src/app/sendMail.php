@@ -1,4 +1,12 @@
 <?php
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 // Handle CORS preflight cleanly
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header("Access-Control-Allow-Origin: *");
@@ -28,21 +36,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $recipient = 'chanbit10@gmail.com';  
     $subject = "Contact From <$email>";
-    $email_content = "From: " . htmlspecialchars($name) . "<br>" . nl2br(htmlspecialchars($message));
+    $email_content = "From: " . htmlspecialchars($name) . "<br><br>" . nl2br(htmlspecialchars($message));
 
-    $headers = [
-        'MIME-Version: 1.0',
-        'Content-type: text/html; charset=utf-8',
-        'From: noreply@mywebsite.com'
-    ];
+    // Initialize PHPMailer
+    $mail = new PHPMailer(true);
 
-    // Attempt to send
-    if (mail($recipient, $subject, $email_content, implode("\r\n", $headers))) {
+    try {
+        // --- SMTP SERVER CONFIGURATION ---
+        $mail->isSMTP();
+        $mail->Host       = 'smtp.gmail.com';                 // SMTP server (e.g., smtp.gmail.com)
+        $mail->SMTPAuth   = true;
+        $mail->Username   = 'your-email@gmail.com';           // CHANGE THIS to your email
+        $mail->Password   = 'your-app-password';              // CHANGE THIS to your App Password
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   // TLS encryption
+        $mail->Port       = 587;                              // TCP port to connect to
+
+        // --- RECIPIENTS ---
+        $mail->setFrom('noreply@mywebsite.com', 'Portfolio Form');
+        $mail->addAddress($recipient);                        // Send to yourself
+        $mail->addReplyTo($email, $name);                     // Clicking reply goes to user
+
+        // --- CONTENT ---
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $subject;
+        $mail->Body    = $email_content;
+
+        // Send it!
+        $mail->send();
+        
         echo json_encode(["status" => "success", "message" => "Email sent successfully"]);
-    } else {
-        // If it reaches here, Render has no built-in mail utility!
+
+    } catch (Exception $e) {
+        // Capture specific PHPMailer connection issues
         http_response_code(500);
-        echo json_encode(["status" => "error", "message" => "PHP mail() failed server execution environment setup."]);
+        echo json_encode([
+            "status" => "error", 
+            "message" => "PHPMailer failed to send.",
+            "error_details" => $mail->ErrorInfo
+        ]);
     }
     exit;
 }
