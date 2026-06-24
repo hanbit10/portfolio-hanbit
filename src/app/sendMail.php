@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $params->name;
     $message = $params->message;
 
-    $recipient = 'notyou01@hotmail.com';  
+    $recipient = 'chanbit10@gmail.com';  
     $subject = "Contact From <$email>";
     $email_content = "From: " . htmlspecialchars($name) . "<br>" . nl2br(htmlspecialchars($message));
 
