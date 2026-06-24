@@ -18,7 +18,7 @@ export class ContactComponent implements OnInit {
   @Input() getData: any;
   constructor(
     private router: Router,
-    public translateService: TranslateService
+    public translateService: TranslateService,
   ) {}
 
   ngOnInit(): void {
@@ -92,7 +92,7 @@ export class ContactComponent implements OnInit {
     if (usernameValue == '') {
       this.setError(
         username,
-        this.translateService.getTranslation('contact.input1')
+        this.translateService.getTranslation('contact.input1'),
       );
       this.checker = 0;
     } else {
@@ -107,7 +107,7 @@ export class ContactComponent implements OnInit {
     if (textareaValue == '') {
       this.setError(
         textarea,
-        this.translateService.getTranslation('contact.input4')
+        this.translateService.getTranslation('contact.input4'),
       );
       this.checker = 0;
     } else {
@@ -122,13 +122,13 @@ export class ContactComponent implements OnInit {
     if (emailValue == '') {
       this.setError(
         email,
-        this.translateService.getTranslation('contact.input2')
+        this.translateService.getTranslation('contact.input2'),
       );
       this.checker = 0;
     } else if (!this.isValidEmail(emailValue)) {
       this.setError(
         email,
-        this.translateService.getTranslation('contact.input3')
+        this.translateService.getTranslation('contact.input3'),
       );
       this.checker = 0;
     } else {
@@ -146,20 +146,20 @@ export class ContactComponent implements OnInit {
     } else {
       this.setError(
         checkbox,
-        this.translateService.getTranslation('contact.input5')
+        this.translateService.getTranslation('contact.input5'),
       );
       this.checker = 0;
     }
   }
 
-  mailTest = false;
+  // mailTest = false;
   contactData = {
     name: '',
     email: '',
     message: '',
   };
   post = {
-    endPoint: 'https://hanbit-chang.de/sendMail.php',
+    endPoint: 'https://hanbit-chang.onrender.com/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
     options: {
       headers: {
@@ -172,6 +172,7 @@ export class ContactComponent implements OnInit {
     this.validateInputs();
     if (this.formValidate(ngForm)) {
       try {
+        console.log('checking contactData', this.contactData);
         this.http
           .post(this.post.endPoint, this.post.body(this.contactData))
           .subscribe({
@@ -197,19 +198,27 @@ export class ContactComponent implements OnInit {
     }
   }
 
+  // formValidate(ngForm: NgForm) {
+  //   return (
+  //     ngForm.submitted &&
+  //     ngForm.form.valid &&
+  //     !this.mailTest &&
+  //     this.checker >= 4
+  //   );
+  // }
+
   formValidate(ngForm: NgForm) {
-    return (
-      ngForm.submitted &&
-      ngForm.form.valid &&
-      !this.mailTest &&
-      this.checker >= 4
-    );
+    return ngForm.submitted && ngForm.form.valid && this.checker >= 4;
   }
 
+  // formInvalidate(ngForm: NgForm) {
+  //   return (
+  //     ngForm.submitted && ngForm.form.valid && this.mailTest && this.checker < 4
+  //   );
+  // }
+
   formInvalidate(ngForm: NgForm) {
-    return (
-      ngForm.submitted && ngForm.form.valid && this.mailTest && this.checker < 4
-    );
+    return ngForm.submitted && ngForm.form.valid && this.checker < 4;
   }
 
   gotoPrivacyPolicy() {
