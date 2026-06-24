@@ -188,7 +188,7 @@ export class ContactComponent implements OnInit {
       // 2. Fire the clean post command directly to your backend
       this.http
         .post(
-          'https://hanbit-chang.onrender.com/sendMail.php',
+          'https://portfolio-backend-3sv6.onrender.com/sendMail.php',
           this.contactData, // Do NOT use JSON.stringify() here! Pass the object directly.
           { responseType: 'text' }, // Forces Angular to accept standard text back from PHP
         )
